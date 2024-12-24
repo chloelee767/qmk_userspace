@@ -8,9 +8,9 @@ enum custom_layers {
 _QWERTY,
 _SYMBOL,
 _NUMNAV,
-_FNKEY,
 _NUM,
 _NAV,
+_FNKEY,
 _MULTIMEDIA
 };
 
@@ -84,28 +84,6 @@ KC_EQL, KC_0, _______,
 _______, _______, _______
 ),
 
-[_FNKEY] =
-LAYOUT(
-/* Number Row */
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-/* Qwerty Row */
-XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX,
-/* Home Row */
-XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
-/* Zxc Row (Left) */
-XXXXXXX, KC_F11, KC_F12, XXXXXXX, XXXXXXX, XXXXXXX,
-/* Top Thumb Keys */
-_______, _______,
-/* Zxc Row (Right) */
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-/* Bottom Row */
-_______, _______, _______,
-_______, _______, _______
-),
-
 [_NUM] = LAYOUT(
 /* Number Row */
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
@@ -143,6 +121,28 @@ _______, _______, _______, _______, _______, _______,
 _______, _______,
 /* Zxc Row (Right) */
 XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
+/* Bottom Row */
+_______, _______, _______,
+_______, _______, _______
+),
+
+[_FNKEY] =
+LAYOUT(
+/* Number Row */
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+/* Qwerty Row */
+XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
+XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX,
+/* Home Row */
+XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
+XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
+/* Zxc Row (Left) */
+XXXXXXX, KC_F11, KC_F12, XXXXXXX, XXXXXXX, XXXXXXX,
+/* Top Thumb Keys */
+_______, _______,
+/* Zxc Row (Right) */
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Bottom Row */
 _______, _______, _______,
 _______, _______, _______
