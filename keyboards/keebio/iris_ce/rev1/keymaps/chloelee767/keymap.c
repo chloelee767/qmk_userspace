@@ -22,8 +22,8 @@ LAYOUT(
 KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
 KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
 /* Qwerty Row */
-QK_CAPS_WORD_TOGGLE, LSFT_T(KC_Q), LT(_NAV,KC_W), LGUI_T(KC_E), KC_R, KC_T,
-KC_Y, KC_U, LGUI_T(KC_I), LT(_NUM,KC_O), LSFT_T(KC_P), QK_CAPS_WORD_TOGGLE,
+QK_CAPS_WORD_TOGGLE, KC_Q, KC_W, KC_E, KC_R, KC_T,
+KC_Y, KC_U, KC_I, KC_O, KC_P, QK_CAPS_WORD_TOGGLE,
 /* Home Row */
 KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), KC_G,
 KC_H, LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
@@ -42,7 +42,7 @@ LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_FNKEY,KC_BSPC)
 LAYOUT(
 /* Number Row */
 _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
+XXXXXXX, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
 _______, XXXXXXX, KC_PPLS, KC_EQL, XXXXXXX, KC_GRV, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
 KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
@@ -56,7 +56,7 @@ _______, _______,
 /* Zxc Row (Right) */
 KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
 /* Bottom Row */
-KC_LCTL, _______, _______,
+_______, _______, _______,
 _______, _______, _______
 ),
 
@@ -242,15 +242,17 @@ void matrix_scan_user(void) {
 
 // Combos
 
-const uint16_t PROGMEM uj_combo[] = {KC_U, KC_J, COMBO_END};
-const uint16_t PROGMEM ik_combo[] = {KC_I, KC_K, COMBO_END};
-const uint16_t PROGMEM ol_combo[] = {KC_O, KC_L, COMBO_END};
+const uint16_t PROGMEM uj_combo[] = {KC_U, LCTL_T(KC_J), COMBO_END};
+const uint16_t PROGMEM ik_combo[] = {KC_I, LALT_T(KC_K), COMBO_END};
+const uint16_t PROGMEM ol_combo[] = {KC_O, LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM rf_combo[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 combo_t key_combos[] = {
   COMBO(uj_combo, KC_LEFT_BRACKET),
   COMBO(ik_combo, KC_RIGHT_BRACKET),
   COMBO(ol_combo, KC_BSLS),
   COMBO(io_combo, KC_BSPC),
   COMBO(op_combo, KC_DEL),
+  COMBO(rf_combo, KC_GRV),
 };
