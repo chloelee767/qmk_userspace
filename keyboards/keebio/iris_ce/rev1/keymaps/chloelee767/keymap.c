@@ -28,11 +28,11 @@ KC_Y, KC_U, LGUI_T(KC_I), LT(_NUM,KC_O), LSFT_T(KC_P), QK_CAPS_WORD_TOGGLE,
 KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), KC_G,
 KC_H, LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
 /* Zxc Row (Left) */
-KC_LSFT, LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
+MO(_MULTIMEDIA), LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
 /* Top Thumb Keys */
 XXXXXXX, XXXXXXX,
 /* Zxc Row (Right) */
-KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), KC_RSFT,
+KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), MO(_MULTIMEDIA),
 /* Bottom Row */
 LT(_FNKEY,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
 LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_FNKEY,KC_BSPC)
@@ -66,10 +66,10 @@ LAYOUT(
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-KC_PLUS, KC_MINS, KC_1, LGUI_T(KC_2), KC_3, KC_4,
+KC_PLUS, KC_MINS, KC_1, KC_2, KC_3, KC_4,
 KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, XXXXXXX,
 /* Home Row */
-KC_COMM, LSFT_T(KC_DOT), LGUI_T(KC_4), LALT_T(KC_5), LCTL_T(KC_6), KC_7,
+KC_COMM, KC_DOT, KC_4, KC_5, KC_6, KC_7,
 KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, XXXXXXX,
 /* Zxc Row (Left) */
 KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_BSLS,
@@ -87,10 +87,10 @@ _______, _______, _______
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 _______, _______, _______, _______, _______, _______,
 /* Qwerty Row */
-KC_PLUS, KC_MINS, KC_1, LGUI_T(KC_2), KC_3, KC_4,
+KC_PLUS, KC_MINS, KC_1, KC_2, KC_3, KC_4,
 _______, _______, _______, _______, _______, _______,
 /* Home Row */
-KC_COMM, LSFT_T(KC_DOT), LGUI_T(KC_4), LALT_T(KC_5), LCTL_T(KC_6), KC_7,
+KC_COMM, KC_DOT, KC_4, KC_5, KC_6, KC_7,
 _______, _______, _______, _______, _______, _______,
 /* Zxc Row (Left) */
 KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_BSLS,
