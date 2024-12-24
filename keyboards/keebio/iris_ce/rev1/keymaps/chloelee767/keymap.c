@@ -9,9 +9,9 @@ _QWERTY,
 _SYMBOL,
 _NUMNAV,
 _FNKEY,
-_MULTIMEDIA,
 _NUM,
-_NAV
+_NAV,
+_MULTIMEDIA
 };
 
 // TODO make sure to add QK_BOOT to both sides so that we can flash the keyboard!
@@ -106,28 +106,6 @@ KC_TRNS, KC_TRNS, KC_TRNS,
 KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
-[_MULTIMEDIA] =
-LAYOUT(
-/* Number Row */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-/* Qwerty Row */
-KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-/* Home Row */
-KC_NO, KC_NO, KC_MRWD, KC_MPLY, KC_MFFD, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-/* Zxc Row (Left) */
-KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
-/* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
-/* Zxc Row (Right) */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-/* Bottom Row */
-KC_TRNS, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
-),
-
 [_NUM] = LAYOUT(
 /* Number Row */
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -165,6 +143,28 @@ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 KC_TRNS, KC_TRNS,
 /* Zxc Row (Right) */
 KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,
+/* Bottom Row */
+KC_TRNS, KC_TRNS, KC_TRNS,
+KC_TRNS, KC_TRNS, KC_TRNS
+),
+
+[_MULTIMEDIA] =
+LAYOUT(
+/* Number Row */
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+/* Qwerty Row */
+KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+/* Home Row */
+KC_NO, KC_NO, KC_MRWD, KC_MPLY, KC_MFFD, KC_NO,
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+/* Zxc Row (Left) */
+KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
+/* Top Thumb Keys */
+KC_TRNS, KC_TRNS,
+/* Zxc Row (Right) */
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
 /* Bottom Row */
 KC_TRNS, KC_TRNS, KC_TRNS,
 KC_TRNS, KC_TRNS, KC_TRNS
