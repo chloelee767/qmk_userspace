@@ -191,6 +191,14 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  // Return 0 for certain keys if we want to bypass achordion.
+
+  // Return same as tapping term instead of the default 1000ms to
+  // allow us to use single hand tap-holds with the mouse.
+  return TAPPING_TERM;
+}
+
 bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
       if (!record->tap.count) { // if holding
         if (record->event.pressed) { // on hold press
