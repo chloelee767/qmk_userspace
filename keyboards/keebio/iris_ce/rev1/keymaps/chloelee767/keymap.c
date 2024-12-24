@@ -239,3 +239,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 void matrix_scan_user(void) {
   achordion_task();
 }
+
+// Combos
+
+const uint16_t PROGMEM uj_combo[] = {KC_U, KC_J, COMBO_END};
+const uint16_t PROGMEM ik_combo[] = {KC_I, KC_K, COMBO_END};
+const uint16_t PROGMEM ol_combo[] = {KC_O, KC_L, COMBO_END};
+const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
+combo_t key_combos[] = {
+  COMBO(uj_combo, KC_LEFT_BRACKET),
+  COMBO(ik_combo, KC_RIGHT_BRACKET),
+  COMBO(ol_combo, KC_BSLS),
+  COMBO(io_combo, KC_BSPC),
+  COMBO(op_combo, KC_DEL),
+};
