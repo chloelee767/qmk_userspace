@@ -170,9 +170,68 @@ _______, _______, _______
 
 };
 
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+
+  // Allow same-hand holds for thumb key holds.
+  if (tap_hold_record->event.key.row == 4 || tap_hold_record->event.key.row == 9) {
+      return true;
+  }
+
+  // Allow same hands for tab / tilde combos
+  if (other_keycode == KC_TAB || other_keycode == KC_GRV || other_keycode == KC_TILD) {
+      return true;
+  }
+
+  // TODO Allow same hand for zxc row combos
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
+      if (!record->tap.count) { // if holding
+        if (record->event.pressed) { // on hold press
+          register_mods(MOD_BIT(mod_keycode));
+        } else { // on hold release
+          unregister_mods(MOD_BIT(mod_keycode));
+        }
+      }
+      return true; // Continue normal handling
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_achordion(keycode, record)) { return false; }
-  // Your macros ...
+
+  // Custom code goes after achordion
+
+  switch (keycode) {
+    // num-mods layer
+    case LT(_NUM,KC_DOT):
+    case LT(_NUM,KC_O):
+      // Behave as KC_DOT/KC_O on tap, LM(_NUM,MOD_LGUI) on hold
+      return apply_mod_if_holding(KC_LGUI, record);
+    case LT(_NUM,KC_COMM):
+      return apply_mod_if_holding(KC_LALT, record);
+    case LT(_NUM,KC_M):
+      return apply_mod_if_holding(KC_LCTL, record);
+    case LT(_NUM,KC_SLSH):
+      return apply_mod_if_holding(KC_LSFT, record);
+
+    // nav-mods layer
+    case LT(_NAV,KC_X):
+    case LT(_NAV,KC_W):
+      // Behave as KC_DOT/KC_O on tap, LM(_NAV,MOD_LGUI) on hold
+      return apply_mod_if_holding(KC_LGUI, record);
+    case LT(_NAV,KC_C):
+      return apply_mod_if_holding(KC_LALT, record);
+    case LT(_NAV,KC_V):
+      return apply_mod_if_holding(KC_LCTL, record);
+    case LT(_NAV,KC_Z):
+      return apply_mod_if_holding(KC_LSFT, record);
+  }
 
   return true;
 }
