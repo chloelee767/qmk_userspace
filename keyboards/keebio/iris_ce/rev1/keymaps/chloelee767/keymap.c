@@ -32,7 +32,7 @@ KC_H, LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
 /* Zxc Row (Left) */
 KC_LSFT, LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
 /* Top Thumb Keys */
-KC_NO, KC_NO,
+XXXXXXX, XXXXXXX,
 /* Zxc Row (Right) */
 KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), KC_RSFT,
 /* Bottom Row */
@@ -43,131 +43,131 @@ LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_FNKEY,KC_BSPC)
 [_SYMBOL] =
 LAYOUT(
 /* Number Row */
-KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO,
+_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-KC_TRNS, KC_NO, KC_PPLS, KC_EQL, KC_NO, KC_GRV, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
-KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, KC_NO,
+_______, XXXXXXX, KC_PPLS, KC_EQL, XXXXXXX, KC_GRV, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
+KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
 /* Home Row */
-KC_TRNS, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
+_______, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
 KC_DLR, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_DQUO,
 /* Zxc Row (Left) */
-KC_TRNS, KC_AT, KC_HASH, KC_UNDS, KC_NO, KC_NO,
+_______, KC_AT, KC_HASH, KC_UNDS, XXXXXXX, XXXXXXX,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
 KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
 /* Bottom Row */
-KC_LCTL, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+KC_LCTL, _______, _______,
+_______, _______, _______
 ),
 
 [_NUMNAV] =
 LAYOUT(
 /* Number Row */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
 KC_PLUS, KC_MINS, KC_1, LGUI_T(KC_2), KC_3, KC_4,
-KC_HOME, KC_PGUP, KC_UP, KC_PGDN, KC_NO, KC_NO,
+KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, XXXXXXX,
 /* Home Row */
 KC_COMM, LSFT_T(KC_DOT), LGUI_T(KC_4), LALT_T(KC_5), LCTL_T(KC_6), KC_7,
-KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, KC_NO,
+KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, XXXXXXX,
 /* Zxc Row (Left) */
 KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_BSLS,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
-KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,
+XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
 /* Bottom Row */
-KC_EQL, KC_0, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+KC_EQL, KC_0, _______,
+_______, _______, _______
 ),
 
 [_FNKEY] =
 LAYOUT(
 /* Number Row */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-KC_NO, KC_NO, KC_LGUI, KC_NO, KC_NO, KC_NO,
+XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
+XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Home Row */
-KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,
+XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
+XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
 /* Zxc Row (Left) */
-KC_NO, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO,
+XXXXXXX, KC_F11, KC_F12, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Bottom Row */
-KC_TRNS, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+_______, _______, _______,
+_______, _______, _______
 ),
 
 [_NUM] = LAYOUT(
 /* Number Row */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+_______, _______, _______, _______, _______, _______,
 /* Qwerty Row */
 KC_PLUS, KC_MINS, KC_1, LGUI_T(KC_2), KC_3, KC_4,
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+_______, _______, _______, _______, _______, _______,
 /* Home Row */
 KC_COMM, LSFT_T(KC_DOT), LGUI_T(KC_4), LALT_T(KC_5), LCTL_T(KC_6), KC_7,
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+_______, _______, _______, _______, _______, _______,
 /* Zxc Row (Left) */
 KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_BSLS,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+_______, _______, _______, _______, _______, _______,
 /* Bottom Row */
-KC_EQL, KC_0, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+KC_EQL, KC_0, _______,
+_______, _______, _______
 ),
 
 [_NAV] = LAYOUT(
 /* Number Row */
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO,
+_______, _______, _______, _______, _______, _______,
+XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-KC_HOME, KC_PGUP, KC_UP, KC_PGDN, KC_NO, KC_NO,
+_______, _______, _______, _______, _______, _______,
+KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, XXXXXXX,
 /* Home Row */
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, KC_NO,
+_______, _______, _______, _______, _______, _______,
+KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, XXXXXXX,
 /* Zxc Row (Left) */
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+_______, _______, _______, _______, _______, _______,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
-KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,
+XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
 /* Bottom Row */
-KC_TRNS, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+_______, _______, _______,
+_______, _______, _______
 ),
 
 [_MULTIMEDIA] =
 LAYOUT(
 /* Number Row */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Home Row */
-KC_NO, KC_NO, KC_MRWD, KC_MPLY, KC_MFFD, KC_NO,
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Zxc Row (Left) */
-KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX,
 /* Top Thumb Keys */
-KC_TRNS, KC_TRNS,
+_______, _______,
 /* Zxc Row (Right) */
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Bottom Row */
-KC_TRNS, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_TRNS, KC_TRNS
+_______, _______, _______,
+_______, _______, _______
 )
 
 };
