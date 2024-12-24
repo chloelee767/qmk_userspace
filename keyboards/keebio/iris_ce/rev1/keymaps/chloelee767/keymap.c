@@ -180,8 +180,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
       return true;
   }
 
-  // Allow same hands for tab / tilde combos
-  if (other_keycode == KC_TAB || other_keycode == KC_GRV || other_keycode == KC_TILD) {
+  // Allow same hands with holds pressing the thumb keys.
+  if (other_record->event.key.row == 4 || other_record->event.key.row == 9) {
       return true;
   }
 
