@@ -4,4 +4,4 @@
 #define PERMISSIVE_HOLD
 #define COMBO_ONLY_FROM_LAYER 0
 // step size 17 * 3 = 51
-#define RGBLIGHT_DEFAULT_VAL 51
+#define RGB_MATRIX_DEFAULT_VAL 51
