@@ -311,10 +311,51 @@ void set_rgb(uint8_t row, uint8_t col, rgb_t rgb) {
   rgb_matrix_set_color(idx, rgb.r, rgb.g, rgb.b);
 }
 
-void set_numlayer_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
+rgb_t get_default_rgb_color(void) {
+  hsv_t hsv_white = {HSV_WHITE};
+  rgb_t rgb_white = hsv_to_rgb(hsv_limit_brightness(hsv_white));
+  return rgb_white;
+}
+
+void set_numlayer_leds(rgb_t rgb) {
   for (uint8_t i = 1; i <= 3; i++) {
     for (uint8_t j = 2; j <= 4; j++) {
       set_rgb(i, j, rgb);
+    }
+  }
+
+  // FIXME workaround - set right hand leds to fix mirroring
+  rgb_t rgb_default = get_default_rgb_color();
+  for (uint8_t i = 6; i <= 8; i++) {
+    for (uint8_t j = 2; j <= 4; j++) {
+      set_rgb(i, j, rgb_default);
+    }
+  }
+}
+
+void set_navlayer_leds(rgb_t rgb) {
+  set_rgb(6, 3, rgb); // up arrow
+  set_rgb(7, 4, rgb); // left arrow
+  set_rgb(7, 3, rgb); // right arrow
+  set_rgb(7, 2, rgb); // down arrow
+}
+
+void set_fnkeylayer_leds(rgb_t rgb) {
+  // F1-F10
+  for (uint8_t i = 1; i <= 2; i++) {
+    for (uint8_t j = 1; j <= 5; j++) {
+      set_rgb(i, j, rgb);
+    }
+  }
+  // F11-F12
+  set_rgb(3, 1, rgb);
+  set_rgb(3, 2, rgb);
+
+  // FIXME workaround - set right hand leds to fix mirroring
+  rgb_t rgb_default = get_default_rgb_color();
+  for (uint8_t i = 6; i <= 8; i++) {
+    for (uint8_t j = 1; j <= 5; j++) {
+      set_rgb(i, j, rgb_default);
     }
   }
 }
@@ -347,31 +388,24 @@ void set_testing_leds(uint8_t led_min, uint8_t led_max) {
   set_rgb(8, 5, hsv_to_rgb(hsv_limit_brightness(hsv_yellow)));
 }
 
-// TODO refactor - set on layer change trigger instead?
-// see https://docs.qmk.fm/feature_layers#example-layer-state-set-implementation
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-  hsv_t hsv = {HSV_WHITE};
+  hsv_t hsv = {HSV_TEAL};
+  rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
   switch(get_highest_layer(layer_state|default_layer_state)) {
   case _NUMNAV:
-    /* hsv = (hsv_t){HSV_GREEN}; */
-    /* set_numlayer_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
-    set_testing_leds(led_min, led_max);
-    break;
-  case _SYMBOL:
-    hsv = (hsv_t){HSV_BLUE};
-    set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv)));
+    set_numlayer_leds(rgb); // set left half first
+    set_navlayer_leds(rgb);
     break;
   case _NUM:
-    hsv = (hsv_t){HSV_TEAL};
-    set_numlayer_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv)));
+    set_numlayer_leds(rgb);
     break;
-  case _QWERTY:
-    /* hsv = (hsv_t){HSV_WHITE}; */
-    /* set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
+  case _NAV:
+    set_navlayer_leds(rgb);
+    break;
+  case _FNKEY:
+    set_fnkeylayer_leds(rgb);
     break;
   default:
-    /* hsv = (hsv_t){HSV_WHITE}; */
-    /* set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
     break;
   }
 
