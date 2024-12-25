@@ -290,8 +290,13 @@ combo_t key_combos[] = {
 // RGB
 
 hsv_t hsv_limit_brightness(hsv_t hsv) {
-  if (hsv.v > rgb_matrix_get_val()) {
-    hsv.v = rgb_matrix_get_val();
+  // allow us to have no led by default and only have them for layer indication
+  // by setting the brightness to 0
+  uint8_t current_val = rgb_matrix_get_val();
+  if (current_val == 0) {
+    hsv.v = RGB_MATRIX_VAL_STEP;
+  } else {
+    hsv.v = current_val;
   }
   return hsv;
 }
@@ -312,8 +317,14 @@ void set_rgb(uint8_t row, uint8_t col, rgb_t rgb) {
 }
 
 rgb_t get_default_rgb_color(void) {
+  uint8_t current_val = rgb_matrix_get_val();
+  if (current_val == 0) {
+    return (rgb_t){RGB_BLACK};
+  }
+
   hsv_t hsv_white = {HSV_WHITE};
-  rgb_t rgb_white = hsv_to_rgb(hsv_limit_brightness(hsv_white));
+  hsv_white.v = current_val;
+  rgb_t rgb_white = hsv_to_rgb(hsv_white);
   return rgb_white;
 }
 

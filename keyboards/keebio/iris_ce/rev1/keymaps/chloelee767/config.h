@@ -4,12 +4,11 @@
 #define PERMISSIVE_HOLD
 #define COMBO_ONLY_FROM_LAYER 0
 
-// default is white
+// default is no led
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
 #define RGB_MATRIX_DEFAULT_HUE 0
 #define RGB_MATRIX_DEFAULT_SAT 0
-// step size 17 * 3 = 51
-#define RGB_MATRIX_DEFAULT_VAL 51
+#define RGB_MATRIX_DEFAULT_VAL 0
 
 // make sure RGB changes on both halves
 // https://docs.qmk.fm/features/rgb_matrix#indicator-examples-2
