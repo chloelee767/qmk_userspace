@@ -403,15 +403,15 @@ void set_numlayer_leds(rgb_t rgb) {
 void set_navlayer_leds(rgb_t rgb) {
   set_rgb(6, 3, rgb); // up arrow
   set_rgb(7, 4, rgb); // left arrow
-  set_rgb(7, 3, rgb); // right arrow
-  set_rgb(7, 2, rgb); // down arrow
+  set_rgb(7, 3, rgb); // down arrow
+  set_rgb(7, 2, rgb); // right arrow
 }
 
 void set_left_nav_layer_leds(rgb_t rgb) {
   set_rgb(1, 3, rgb); // up arrow
-  set_rgb(2, 4, rgb); // left arrow
-  set_rgb(3, 3, rgb); // right arrow
-  set_rgb(4, 2, rgb); // down arrow
+  set_rgb(2, 2, rgb); // left arrow
+  set_rgb(2, 3, rgb); // down arrow
+  set_rgb(2, 4, rgb); // right arrow
 
   // FIXME mirroring workaround
   set_navlayer_leds(get_default_rgb_color());
