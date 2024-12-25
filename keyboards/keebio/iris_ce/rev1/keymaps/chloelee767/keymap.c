@@ -5,13 +5,19 @@
 #include "features/caps_word.h"
 
 enum custom_layers {
+  // base layer
   _QWERTY,
-  _SYMBOL,
-  _NUMNAV,
+
+  // make lockable layers lower numbered
+  // so that we can use the higher layers if needed
   _NUM,
   _NAV,
   _LEFTNAV,
   _FNKEY,
+
+  // rest of the layers
+  _SYMBOL,
+  _NUMNAV,
   _MULTIMEDIA
 };
 
