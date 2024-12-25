@@ -45,6 +45,7 @@ bool caps_word_press_user(uint16_t keycode) {
     case KC_PDOT:
 
     // Misc
+    case KC_SPC: // coordinates, equations, often need spaces
     case KC_BSPC:
     case KC_DEL:
       return true;
