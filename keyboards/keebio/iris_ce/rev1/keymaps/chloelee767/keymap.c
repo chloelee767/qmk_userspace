@@ -44,7 +44,7 @@ LAYOUT(
 _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 XXXXXXX, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
-_______, XXXXXXX, KC_PPLS, KC_EQL, XXXXXXX, KC_GRV, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
+_______, XXXXXXX, KC_PPLS, KC_EQL, KC_GRV, XXXXXXX, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
 KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
 /* Home Row */
 _______, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
