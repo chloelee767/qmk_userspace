@@ -15,8 +15,11 @@ enum custom_layers {
 };
 
 enum my_keycodes {
-  UKC_NUM_WORD_TOGGLE = SAFE_RANGE
+  UKC_NUM_WORD_TOGGLE = SAFE_RANGE,
+  UKC_NUM_LOCK_TOGGLE
 };
+
+bool is_num_lock_active = false;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -258,6 +261,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       return false;
     }
     break;
+
+  case UKC_NUM_LOCK_TOGGLE:
+    if (record->event.pressed) {
+      layer_invert(_NUM);
+      is_num_lock_active = !is_num_lock_active;
+      return false;
+    }
+    break;
   }
 
   return true;
@@ -276,6 +287,7 @@ const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM rf_combo[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM uio_combo[] = {KC_U, KC_I, KC_O, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(uj_combo, KC_LEFT_BRACKET),
@@ -285,6 +297,7 @@ combo_t key_combos[] = {
   COMBO(op_combo, KC_DEL),
   COMBO(rf_combo, KC_GRV),
   COMBO(ui_combo, UKC_NUM_WORD_TOGGLE),
+  COMBO(uio_combo, UKC_NUM_LOCK_TOGGLE),
 };
 
 // RGB
@@ -411,6 +424,14 @@ void set_multimedia_layer_leds(void) {
   set_rgb(6, 4, rgb);
 }
 
+void set_caps_word_leds(void) {
+  hsv_t hsv = {HSV_ORANGE};
+  rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+  // light up caps word buttons
+  set_rgb(1, 0, rgb);
+  set_rgb(6, 0, rgb);
+}
+
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   hsv_t hsv = {HSV_BLUE};
   rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
@@ -420,6 +441,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     set_navlayer_leds(rgb);
     break;
   case _NUM:
+    if (is_num_lock_active) {
+      hsv = (hsv_t){HSV_ORANGE};
+      rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+    }
     set_numlayer_leds(rgb);
     break;
   case _NAV:
@@ -432,6 +457,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     set_multimedia_layer_leds();
   default:
     break;
+  }
+
+  if (is_caps_word_on()) {
+    set_caps_word_leds();
   }
 
   return false;
