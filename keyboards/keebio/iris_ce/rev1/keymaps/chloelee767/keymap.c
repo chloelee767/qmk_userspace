@@ -2,7 +2,7 @@
 
 #include QMK_KEYBOARD_H
 #include "features/achordion.h"
-#include "caps_word.h"
+#include "features/caps_word.h"
 
 enum custom_layers {
 _QWERTY,
