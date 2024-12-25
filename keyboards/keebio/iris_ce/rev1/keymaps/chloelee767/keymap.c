@@ -399,8 +399,20 @@ void set_testing_leds(uint8_t led_min, uint8_t led_max) {
   set_rgb(8, 5, hsv_to_rgb(hsv_limit_brightness(hsv_yellow)));
 }
 
+void set_multimedia_layer_leds(void) {
+  hsv_t hsv = {HSV_PURPLE};
+  rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+
+  set_rgb(1, 3, rgb);
+  set_rgb(1, 4, rgb);
+
+  // FIXME mirroring workaround
+  set_rgb(6, 3, rgb);
+  set_rgb(6, 4, rgb);
+}
+
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-  hsv_t hsv = {HSV_TEAL};
+  hsv_t hsv = {HSV_BLUE};
   rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
   switch(get_highest_layer(layer_state|default_layer_state)) {
   case _NUMNAV:
@@ -416,6 +428,8 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   case _FNKEY:
     set_fnkeylayer_leds(rgb);
     break;
+  case _MULTIMEDIA:
+    set_multimedia_layer_leds();
   default:
     break;
   }
