@@ -474,8 +474,9 @@ void set_multimedia_layer_leds(void) {
   set_rgb(1, 4, rgb);
 
   // FIXME mirroring workaround
-  set_rgb(6, 3, rgb);
-  set_rgb(6, 4, rgb);
+  rgb_t rgb_default = get_default_rgb_color();
+  set_rgb(6, 3, rgb_default);
+  set_rgb(6, 4, rgb_default);
 }
 
 void set_caps_word_leds(void) {
@@ -509,11 +510,13 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     break;
   case _MULTIMEDIA:
     set_multimedia_layer_leds();
+    break;
   case _LEFTNAV:
     // left nav is only available on lock basis
     hsv = (hsv_t){HSV_ORANGE};
     rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
     set_left_nav_layer_leds(rgb);
+    break;
   default:
     break;
   }
