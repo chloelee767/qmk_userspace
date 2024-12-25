@@ -45,8 +45,8 @@ LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_FNKEY,KC_BSPC)
 [_SYMBOL] =
 LAYOUT(
 /* Number Row */
-_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-XXXXXXX, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, XXXXXXX, XXXXXXX, XXXXXXX,
+_______, _______, _______, _______, _______, _______,
+_______, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, _______, _______, _______,
 /* Qwerty Row */
 _______, XXXXXXX, KC_PPLS, KC_EQL, KC_GRV, XXXXXXX, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
 KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
@@ -67,8 +67,8 @@ _______, _______, _______
 [_NUMNAV] =
 LAYOUT(
 /* Number Row */
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
+_______, _______, _______, _______, _______, _______,
+_______, _______, _______, _______, _______, _______,
 /* Qwerty Row */
 KC_PLUS, KC_MINS, KC_1, KC_2, KC_3, KC_4,
 KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, XXXXXXX,
@@ -110,7 +110,7 @@ _______, _______, _______
 [_NAV] = LAYOUT(
 /* Number Row */
 _______, _______, _______, _______, _______, _______,
-XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX,
+_______, _______, _______, _______, _______, _______,
 /* Qwerty Row */
 _______, _______, _______, _______, _______, _______,
 KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, XXXXXXX,
