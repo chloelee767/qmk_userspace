@@ -149,7 +149,7 @@ _______, _______, _______
 [_MULTIMEDIA] =
 LAYOUT(
 /* Number Row */
-RM_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+RM_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_CLEAR_EEPROM,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /* Qwerty Row */
 RM_VALD, RM_VALU, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,
@@ -267,31 +267,92 @@ combo_t key_combos[] = {
 
 // RGB
 
-// TODO update, testing
+hsv_t hsv_limit_brightness(hsv_t hsv) {
+  if (hsv.v > rgb_matrix_get_val()) {
+    hsv.v = rgb_matrix_get_val();
+  }
+  return hsv;
+}
+
+// FIXME led positions are wrong
+void set_numlayer_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
+  uint8_t num_leds[] = {14, 15, 16, 26, 27, 28, 38, 39, 40};
+  size_t n = sizeof(num_leds) / sizeof(num_leds[0]);
+
+  for (uint8_t i = 0; i < n; i++) {
+    uint8_t led = led_min + num_leds[i];
+    rgb_matrix_set_color(led, rgb.r, rgb.g, rgb.b);
+    /* if (led < led_max) { */
+    /*   rgb_matrix_set_color(led, rgb.r, rgb.g, rgb.b); */
+    /* } */
+  }
+}
+
+void set_all_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
+  for (uint8_t i = led_min; i < led_max; i++) {
+    rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+  }
+}
+
+void set_rgb(uint8_t row, uint8_t col, rgb_t rgb) {
+  if (row >= MATRIX_ROWS || col >= MATRIX_COLS) {
+    return;
+  }
+
+  uint8_t idx = g_led_config.matrix_co[row][col];
+  rgb_matrix_set_color(idx, rgb.r, rgb.g, rgb.b);
+}
+
+// TODO fix - leds are mirrored on both halves
+void set_testing_leds(uint8_t led_min, uint8_t led_max) {
+  hsv_t hsv_red = {HSV_RED};
+  hsv_t hsv_blue = {HSV_BLUE};
+  hsv_t hsv_green = {HSV_GREEN};
+  hsv_t hsv_yellow = {HSV_YELLOW};
+
+  /* hsv_t hsv_white = {HSV_WHITE}; */
+/* set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv_white))); */
+
+  set_rgb(0, 0, hsv_to_rgb(hsv_limit_brightness(hsv_red)));
+  set_rgb(0, 1, hsv_to_rgb(hsv_limit_brightness(hsv_red)));
+  set_rgb(0, 2, hsv_to_rgb(hsv_limit_brightness(hsv_red)));
+
+  set_rgb(0, 3, hsv_to_rgb(hsv_limit_brightness(hsv_blue)));
+  set_rgb(0, 4, hsv_to_rgb(hsv_limit_brightness(hsv_blue)));
+  set_rgb(0, 5, hsv_to_rgb(hsv_limit_brightness(hsv_blue)));
+
+  set_rgb(1, 0, hsv_to_rgb(hsv_limit_brightness(hsv_green)));
+  set_rgb(1, 1, hsv_to_rgb(hsv_limit_brightness(hsv_green)));
+  set_rgb(1, 2, hsv_to_rgb(hsv_limit_brightness(hsv_green)));
+
+  // n, m
+  // this isn't mirrored
+  set_rgb(8, 4, hsv_to_rgb(hsv_limit_brightness(hsv_yellow)));
+  set_rgb(8, 5, hsv_to_rgb(hsv_limit_brightness(hsv_yellow)));
+}
+
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   hsv_t hsv = {HSV_WHITE};
   switch(get_highest_layer(layer_state|default_layer_state)) {
   case _NUMNAV:
-    hsv = (hsv_t){HSV_GREEN};
+    /* hsv = (hsv_t){HSV_GREEN}; */
+    /* set_numlayer_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
+    set_testing_leds(led_min, led_max);
     break;
   case _SYMBOL:
     hsv = (hsv_t){HSV_BLUE};
+    set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv)));
     break;
   case _QWERTY:
-    hsv = (hsv_t){HSV_WHITE};
+    /* hsv = (hsv_t){HSV_WHITE}; */
+    /* set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
     break;
   default:
-    hsv = (hsv_t){HSV_WHITE};
+    /* hsv = (hsv_t){HSV_WHITE}; */
+    /* set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv))); */
     break;
   }
-  // limit brightness
-  if (hsv.v > rgb_matrix_get_val()) {
-    hsv.v = rgb_matrix_get_val();
-  }
-  rgb_t rgb = hsv_to_rgb(hsv);
 
-  for (uint8_t i = led_min; i < led_max; i++) {
-    rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
-  }
   return false;
 }
+
