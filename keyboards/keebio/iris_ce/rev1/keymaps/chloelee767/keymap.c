@@ -144,10 +144,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       _______, _______, _______, _______, _______, _______,
                       _______, _______, _______, _______, _______, _______,
                       /* Qwerty Row */
-                      XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME, XXXXXXX,
+                      XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
                       _______, _______, _______, _______, _______, _______,
                       /* Home Row */
-                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, XXXXXXX,
+                      XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
                       _______, _______, _______, _______, _______, _______,
                       /* Zxc Row (Left) */
                       _______, _______, _______, _______, _______, _______,
