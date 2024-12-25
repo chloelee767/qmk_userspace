@@ -10,13 +10,15 @@ enum custom_layers {
   _NUMNAV,
   _NUM,
   _NAV,
+  _LEFTNAV,
   _FNKEY,
   _MULTIMEDIA
 };
 
 enum my_keycodes {
   UKC_NUM_WORD_TOGGLE = SAFE_RANGE,
-  UKC_NUM_LOCK_TOGGLE
+  UKC_NUM_LOCK_TOGGLE,
+  UKC_LEFT_NAV_LOCK_TOGGLE,
 };
 
 bool is_num_lock_active = false;
@@ -130,6 +132,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______, _______, _______,
                   _______, _______, _______
                   ),
+
+  [_LEFTNAV] = LAYOUT(
+                      /* Number Row */
+                      _______, _______, _______, _______, _______, _______,
+                      _______, _______, _______, _______, _______, _______,
+                      /* Qwerty Row */
+                      XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME, XXXXXXX,
+                      _______, _______, _______, _______, _______, _______,
+                      /* Home Row */
+                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, XXXXXXX,
+                      _______, _______, _______, _______, _______, _______,
+                      /* Zxc Row (Left) */
+                      _______, _______, _______, _______, _______, _______,
+                      /* Top Thumb Keys */
+                      _______, _______,
+                      /* Zxc Row (Right) */
+                      _______, _______, _______, _______, _______, _______,
+                      /* Bottom Row */
+                      _______, _______, _______,
+                      _______, _______, _______
+                      ),
 
   [_FNKEY] =
   LAYOUT(
@@ -262,10 +285,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     }
     break;
 
+    // layer locks
   case UKC_NUM_LOCK_TOGGLE:
     if (record->event.pressed) {
       layer_invert(_NUM);
       is_num_lock_active = !is_num_lock_active;
+      return false;
+    }
+    break;
+  case UKC_LEFT_NAV_LOCK_TOGGLE:
+    if (record->event.pressed) {
+      layer_invert(_LEFTNAV);
       return false;
     }
     break;
@@ -290,6 +320,7 @@ const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
 const uint16_t PROGMEM combo_345[] = {KC_3, KC_4, KC_5, COMBO_END};
+const uint16_t PROGMEM combo_we[] = {KC_W, KC_E, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
@@ -298,10 +329,12 @@ combo_t key_combos[] = {
   COMBO(combo_io, KC_BSPC),
   COMBO(combo_op, KC_DEL),
   COMBO(combo_rf, KC_GRV),
+
   COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_34, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
   COMBO(combo_345, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_we, UKC_LEFT_NAV_LOCK_TOGGLE),
 };
 
 // RGB
@@ -367,6 +400,17 @@ void set_navlayer_leds(rgb_t rgb) {
   set_rgb(7, 3, rgb); // right arrow
   set_rgb(7, 2, rgb); // down arrow
 }
+
+void set_left_nav_layer_leds(rgb_t rgb) {
+  set_rgb(1, 3, rgb); // up arrow
+  set_rgb(2, 4, rgb); // left arrow
+  set_rgb(3, 3, rgb); // right arrow
+  set_rgb(4, 2, rgb); // down arrow
+
+  // FIXME mirroring workaround
+  set_navlayer_leds(get_default_rgb_color());
+}
+
 
 void set_fnkeylayer_leds(rgb_t rgb) {
   // F1-F10
@@ -459,6 +503,11 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     break;
   case _MULTIMEDIA:
     set_multimedia_layer_leds();
+  case _LEFTNAV:
+    // left nav is only available on lock basis
+    hsv = (hsv_t){HSV_ORANGE};
+    rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+    set_left_nav_layer_leds(rgb);
   default:
     break;
   }
