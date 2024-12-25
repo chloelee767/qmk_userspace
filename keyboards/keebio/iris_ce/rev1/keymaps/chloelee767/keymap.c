@@ -280,24 +280,24 @@ void matrix_scan_user(void) {
 
 // Combos
 
-const uint16_t PROGMEM uj_combo[] = {KC_U, LCTL_T(KC_J), COMBO_END};
-const uint16_t PROGMEM ik_combo[] = {KC_I, LALT_T(KC_K), COMBO_END};
-const uint16_t PROGMEM ol_combo[] = {KC_O, LGUI_T(KC_L), COMBO_END};
-const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
-const uint16_t PROGMEM rf_combo[] = {KC_R, LCTL_T(KC_F), COMBO_END};
-const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM uio_combo[] = {KC_U, KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_uj[] = {KC_U, LCTL_T(KC_J), COMBO_END};
+const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
+const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
+const uint16_t PROGMEM combo_io[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_op[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
+const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
 
 combo_t key_combos[] = {
-  COMBO(uj_combo, KC_LEFT_BRACKET),
-  COMBO(ik_combo, KC_RIGHT_BRACKET),
-  COMBO(ol_combo, KC_BSLS),
-  COMBO(io_combo, KC_BSPC),
-  COMBO(op_combo, KC_DEL),
-  COMBO(rf_combo, KC_GRV),
-  COMBO(ui_combo, UKC_NUM_WORD_TOGGLE),
-  COMBO(uio_combo, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_uj, KC_LEFT_BRACKET),
+  COMBO(combo_ik, KC_RIGHT_BRACKET),
+  COMBO(combo_ol, KC_BSLS),
+  COMBO(combo_io, KC_BSPC),
+  COMBO(combo_op, KC_DEL),
+  COMBO(combo_rf, KC_GRV),
+  COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
+  COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
 };
 
 // RGB
