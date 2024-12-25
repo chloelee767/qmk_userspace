@@ -288,6 +288,8 @@ const uint16_t PROGMEM combo_op[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
+const uint16_t PROGMEM combo_345[] = {KC_3, KC_4, KC_5, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
@@ -297,7 +299,9 @@ combo_t key_combos[] = {
   COMBO(combo_op, KC_DEL),
   COMBO(combo_rf, KC_GRV),
   COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
+  COMBO(combo_34, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_345, UKC_NUM_LOCK_TOGGLE),
 };
 
 // RGB
