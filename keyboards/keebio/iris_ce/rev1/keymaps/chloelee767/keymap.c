@@ -1,8 +1,8 @@
-// Copyright 2023 Danny Nguyen (@nooges)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
 #include "features/achordion.h"
+#include "caps_word.h"
 
 enum custom_layers {
 _QWERTY,
@@ -12,6 +12,10 @@ _NUM,
 _NAV,
 _FNKEY,
 _MULTIMEDIA
+};
+
+enum my_keycodes {
+    UKC_TOGGLE_NUM_LOCK = SAFE_RANGE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -239,6 +243,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       return apply_mod_if_holding(KC_LCTL, record);
     case LT(_NAV,KC_Z):
       return apply_mod_if_holding(KC_LSFT, record);
+
+    // caps word / num word
+    case QK_CAPS_WORD_TOGGLE:
+        if (record->event.pressed) {
+            toggle_caps_word_mode(CAPS_WORD_MODE_DEFAULT);
+            return false;
+        }
+        break;
+    case UKC_TOGGLE_NUM_LOCK:
+        if (record->event.pressed) {
+            layer_invert(_NUM);
+            toggle_caps_word_mode(CWMODE_NUMBER);
+            return false;
+        }
+        break;
   }
 
   return true;
@@ -256,6 +275,8 @@ const uint16_t PROGMEM ol_combo[] = {KC_O, LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM rf_combo[] = {KC_R, LCTL_T(KC_F), COMBO_END};
+const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+
 combo_t key_combos[] = {
   COMBO(uj_combo, KC_LEFT_BRACKET),
   COMBO(ik_combo, KC_RIGHT_BRACKET),
@@ -263,6 +284,7 @@ combo_t key_combos[] = {
   COMBO(io_combo, KC_BSPC),
   COMBO(op_combo, KC_DEL),
   COMBO(rf_combo, KC_GRV),
+  COMBO(ui_combo, UKC_TOGGLE_NUM_LOCK),
 };
 
 // RGB
@@ -272,20 +294,6 @@ hsv_t hsv_limit_brightness(hsv_t hsv) {
     hsv.v = rgb_matrix_get_val();
   }
   return hsv;
-}
-
-// FIXME led positions are wrong
-void set_numlayer_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
-  uint8_t num_leds[] = {14, 15, 16, 26, 27, 28, 38, 39, 40};
-  size_t n = sizeof(num_leds) / sizeof(num_leds[0]);
-
-  for (uint8_t i = 0; i < n; i++) {
-    uint8_t led = led_min + num_leds[i];
-    rgb_matrix_set_color(led, rgb.r, rgb.g, rgb.b);
-    /* if (led < led_max) { */
-    /*   rgb_matrix_set_color(led, rgb.r, rgb.g, rgb.b); */
-    /* } */
-  }
 }
 
 void set_all_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
@@ -301,6 +309,14 @@ void set_rgb(uint8_t row, uint8_t col, rgb_t rgb) {
 
   uint8_t idx = g_led_config.matrix_co[row][col];
   rgb_matrix_set_color(idx, rgb.r, rgb.g, rgb.b);
+}
+
+void set_numlayer_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
+  for (uint8_t i = 1; i <= 3; i++) {
+    for (uint8_t j = 2; j <= 4; j++) {
+      set_rgb(i, j, rgb);
+    }
+  }
 }
 
 // TODO fix - leds are mirrored on both halves
@@ -331,6 +347,8 @@ void set_testing_leds(uint8_t led_min, uint8_t led_max) {
   set_rgb(8, 5, hsv_to_rgb(hsv_limit_brightness(hsv_yellow)));
 }
 
+// TODO refactor - set on layer change trigger instead?
+// see https://docs.qmk.fm/feature_layers#example-layer-state-set-implementation
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   hsv_t hsv = {HSV_WHITE};
   switch(get_highest_layer(layer_state|default_layer_state)) {
@@ -342,6 +360,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   case _SYMBOL:
     hsv = (hsv_t){HSV_BLUE};
     set_all_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv)));
+    break;
+  case _NUM:
+    hsv = (hsv_t){HSV_TEAL};
+    set_numlayer_leds(led_min, led_max, hsv_to_rgb(hsv_limit_brightness(hsv)));
     break;
   case _QWERTY:
     /* hsv = (hsv_t){HSV_WHITE}; */

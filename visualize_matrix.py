@@ -21,7 +21,7 @@ fig, ax = plt.subplots()
 
 for key in layout:
     x = key["x"]
-    y = key["y"]
+    y = -key["y"] # Invert y-axis as the thumb keys are drawn at the top for some reason
     label = f'{key["matrix"]}'
     height = key.get("h", 1)
     width = 1  # Assume width of 1 for simplicity
@@ -32,7 +32,7 @@ for key in layout:
 
 # Set the limits and aspect ratio
 ax.set_xlim(-1, 18)
-ax.set_ylim(-1, 6)
+ax.set_ylim(-6, 1)
 ax.set_aspect('equal')
 
 # Hide axes
