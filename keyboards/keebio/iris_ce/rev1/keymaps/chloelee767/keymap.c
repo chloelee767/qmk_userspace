@@ -15,7 +15,7 @@ _MULTIMEDIA
 };
 
 enum my_keycodes {
-    UKC_TOGGLE_NUM_WORD = SAFE_RANGE
+    UKC_NUM_WORD_TOGGLE = SAFE_RANGE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -251,7 +251,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
             return false;
         }
         break;
-    case UKC_TOGGLE_NUM_WORD:
+    case UKC_NUM_WORD_TOGGLE:
         if (record->event.pressed) {
             layer_invert(_NUM);
             toggle_caps_word_mode(CWMODE_NUMBER);
@@ -284,7 +284,7 @@ combo_t key_combos[] = {
   COMBO(io_combo, KC_BSPC),
   COMBO(op_combo, KC_DEL),
   COMBO(rf_combo, KC_GRV),
-  COMBO(ui_combo, UKC_TOGGLE_NUM_WORD),
+  COMBO(ui_combo, UKC_NUM_WORD_TOGGLE),
 };
 
 // RGB
