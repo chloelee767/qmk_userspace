@@ -264,3 +264,34 @@ combo_t key_combos[] = {
   COMBO(op_combo, KC_DEL),
   COMBO(rf_combo, KC_GRV),
 };
+
+// RGB
+
+// TODO update, testing
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+  hsv_t hsv = {HSV_WHITE};
+  switch(get_highest_layer(layer_state|default_layer_state)) {
+  case _NUMNAV:
+    hsv = (hsv_t){HSV_GREEN};
+    break;
+  case _SYMBOL:
+    hsv = (hsv_t){HSV_BLUE};
+    break;
+  case _QWERTY:
+    hsv = (hsv_t){HSV_WHITE};
+    break;
+  default:
+    hsv = (hsv_t){HSV_WHITE};
+    break;
+  }
+  // limit brightness
+  if (hsv.v > rgb_matrix_get_val()) {
+    hsv.v = rgb_matrix_get_val();
+  }
+  rgb_t rgb = hsv_to_rgb(hsv);
+
+  for (uint8_t i = led_min; i < led_max; i++) {
+    rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+  }
+  return false;
+}
