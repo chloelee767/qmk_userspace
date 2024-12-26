@@ -285,7 +285,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     break;
   case UKC_NUM_WORD_TOGGLE:
     if (record->event.pressed) {
-      layer_invert(_NUM);
       toggle_caps_word_mode(CWMODE_NUMBER);
       return false;
     }
@@ -294,8 +293,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     // layer locks
   case UKC_NUM_LOCK_TOGGLE:
     if (record->event.pressed) {
-      layer_invert(_NUM);
+      caps_word_off();
+      layer_clear();
       is_num_lock_active = !is_num_lock_active;
+      if (is_num_lock_active) {
+        layer_on(_NUM);
+      } else {
+        layer_off(_NUM);
+      }
       return false;
     }
     break;
@@ -342,6 +347,23 @@ combo_t key_combos[] = {
   COMBO(combo_234, UKC_NUM_LOCK_TOGGLE),
   COMBO(combo_we, UKC_LEFT_NAV_LOCK_TOGGLE),
 };
+
+// Caps word
+
+// Callback when caps word is activated or deactivated
+void caps_word_set_user(bool active) {
+  cw_caps_word_set_user(active);
+  layer_clear();
+  if (active) {
+    is_num_lock_active = false;
+    // Do something when Caps Word activates.
+    if (g_caps_word_mode == CWMODE_NUMBER) {
+      layer_on(_NUM);
+    }
+  } else {
+    // Do something when Caps Word deactivates.
+  }
+}
 
 // RGB
 

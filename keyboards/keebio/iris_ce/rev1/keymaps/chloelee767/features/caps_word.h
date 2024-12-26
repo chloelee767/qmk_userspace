@@ -13,3 +13,5 @@ typedef enum {
 caps_word_mode_t g_caps_word_mode;
 
 bool toggle_caps_word_mode(caps_word_mode_t new_mode);
+
+void cw_caps_word_set_user(bool active);

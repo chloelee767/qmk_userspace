@@ -58,12 +58,11 @@ bool caps_word_press_user(uint16_t keycode) {
   }
 }
 
-void caps_word_set_user(bool active) {
+void cw_caps_word_set_user(bool active) {
   if (active) {
     // Do something when Caps Word activates.
   } else {
     // Do something when Caps Word deactivates.
-    layer_clear();
     // Go back to make sure that when it turns on next without any sepcification (ex. through
     // the CAPS_WORD key), it's in the default settings
     g_caps_word_mode = CAPS_WORD_MODE_DEFAULT;
