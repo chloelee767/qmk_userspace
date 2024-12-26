@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          /* Top Thumb Keys */
          _______, _______,
          /* Zxc Row (Right) */
-         KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
+         KC_0, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
          /* Bottom Row */
          _______, _______, _______,
          _______, _______, _______
