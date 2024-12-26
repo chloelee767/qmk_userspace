@@ -27,8 +27,6 @@ enum my_keycodes {
   UKC_LEFT_NAV_LOCK_TOGGLE,
 };
 
-bool is_num_lock_active = false;
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] =
@@ -246,6 +244,50 @@ bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
   return true; // Continue normal handling
 }
 
+bool is_layer_locked_arr [] = {false, false, false, false, false, false, false, false};
+
+bool is_layer_locked(uint8_t layer) {
+  uint8_t n = sizeof(is_layer_locked_arr) / sizeof(is_layer_locked_arr[0]);
+
+  // ensure array index is within bounds
+  if (layer >= n) {
+    return false;
+  }
+
+  return is_layer_locked_arr[layer];
+}
+
+void toggle_layer_lock(uint8_t layer) {
+  uint8_t n = sizeof(is_layer_locked_arr) / sizeof(is_layer_locked_arr[0]);
+
+  // ensure array index is within bounds
+  if (layer >= n) {
+    return;
+  }
+
+  caps_word_off();
+  layer_clear();
+  // set all other layers to false
+  for (uint8_t i = 0; i < n; i++) {
+    if (i != layer) is_layer_locked_arr[i] = false;
+  }
+
+  is_layer_locked_arr[layer] = !is_layer_locked_arr[layer];
+  if (is_layer_locked_arr[layer]) {
+    layer_on(layer);
+  } else {
+    layer_off(layer);
+  }
+}
+
+void turn_off_all_layer_locks(void) {
+  layer_clear();
+  uint8_t n = sizeof(is_layer_locked_arr) / sizeof(is_layer_locked_arr[0]);
+  for (uint8_t i = 0; i < n; i++) {
+    is_layer_locked_arr[i] = false;
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_achordion(keycode, record)) { return false; }
 
@@ -293,20 +335,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     // layer locks
   case UKC_NUM_LOCK_TOGGLE:
     if (record->event.pressed) {
-      caps_word_off();
-      layer_clear();
-      is_num_lock_active = !is_num_lock_active;
-      if (is_num_lock_active) {
-        layer_on(_NUM);
-      } else {
-        layer_off(_NUM);
-      }
+      toggle_layer_lock(_NUM);
       return false;
     }
     break;
   case UKC_LEFT_NAV_LOCK_TOGGLE:
     if (record->event.pressed) {
-      layer_invert(_LEFTNAV);
+      toggle_layer_lock(_LEFTNAV);
       return false;
     }
     break;
@@ -353,9 +388,8 @@ combo_t key_combos[] = {
 // Callback when caps word is activated or deactivated
 void caps_word_set_user(bool active) {
   cw_caps_word_set_user(active);
-  layer_clear();
+  turn_off_all_layer_locks();
   if (active) {
-    is_num_lock_active = false;
     // Do something when Caps Word activates.
     if (g_caps_word_mode == CWMODE_NUMBER) {
       layer_on(_NUM);
@@ -518,7 +552,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     set_navlayer_leds(rgb);
     break;
   case _NUM:
-    if (is_num_lock_active) {
+    if (is_layer_locked(_NUM)) {
       hsv = (hsv_t){HSV_ORANGE};
       rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
     }
