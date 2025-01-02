@@ -335,7 +335,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     // layer locks
   case UKC_NUM_LOCK_TOGGLE:
     if (record->event.pressed) {
-      toggle_layer_lock(_NUM);
+      toggle_layer_lock(_NUMNAV);
       return false;
     }
     break;
@@ -548,6 +548,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
   switch(get_highest_layer(layer_state|default_layer_state)) {
   case _NUMNAV:
+    if (is_layer_locked(_NUMNAV)) {
+      hsv = (hsv_t){HSV_ORANGE};
+      rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+    }
     set_numlayer_leds(rgb); // set left half first
     set_navlayer_leds(rgb);
     break;
