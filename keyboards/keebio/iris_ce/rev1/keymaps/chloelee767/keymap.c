@@ -366,8 +366,7 @@ const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
 const uint16_t PROGMEM combo_234[] = {KC_2, KC_3, KC_4, COMBO_END};
-const uint16_t PROGMEM combo_we[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_er[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_23[] = {KC_2, KC_3, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
@@ -381,8 +380,7 @@ combo_t key_combos[] = {
   COMBO(combo_34, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
   COMBO(combo_234, UKC_NUM_LOCK_TOGGLE),
-  COMBO(combo_we, UKC_LEFT_NAV_LOCK_TOGGLE),
-  COMBO(combo_er, QK_CAPS_WORD_TOGGLE),
+  COMBO(combo_23, UKC_LEFT_NAV_LOCK_TOGGLE),
 };
 
 // Caps word
