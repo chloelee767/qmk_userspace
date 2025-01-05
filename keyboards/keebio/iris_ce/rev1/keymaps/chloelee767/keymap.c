@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          /* Zxc Row (Right) */
          KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), MO(_MULTIMEDIA),
          /* Bottom Row */
-         LT(_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_SYMBOL,KC_TAB),
+         MO(_NUMNAV), MO(_SYMBOL), LT(_NUMNAV,KC_TAB),
          LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
          ),
 
