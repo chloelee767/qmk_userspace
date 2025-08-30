@@ -21,9 +21,9 @@ layers:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - ['0', '=', '<', '>', '?', '''']
   - - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held1}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   NUMNAV:
@@ -35,9 +35,9 @@ layers:
   - [null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
   - - '='
     - '0'
+    - {type: held}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held1}
     - {t: ▽, type: trans}
   NUM:
   - [{t: ▽, type: trans}, F1, F2, F3, F4, F5, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
@@ -104,3 +104,9 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+draw_config:
+  svg_extra_style: |
+    /* color accent for extra key types */
+    rect.held1, rect.combo.held1 {
+    fill: #dde;
+    }
