@@ -78,19 +78,6 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  FNKEY:
-  - [null, null, null, null, null, null, null, null, null, null, null, null]
-  - [null, F1, F2, F3, F4, F5, null, null, null, null, null, null]
-  - [null, F6, F7, F8, F9, F10, null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
-  - [QK BOOT, F11, F12, null, null, null]
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
-  - [null, null, null, null, null, QK BOOT]
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
   MEDIA:
   - [QK BOOT, null, RM TOGG, RM VALD, RM VALU, EE CLR, null, null, null, null, null, QK BOOT]
   - [null, null, MUTE, VOLD, VOLU, null, null, null, null, null, null, null]
