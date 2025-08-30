@@ -3,36 +3,101 @@ layers:
   BASE:
   - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
   - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
-  - [ESC, A, S, D, F, G, H, J, K, L, ;, '''']
-  - [MEDIA, Z, X, C, V, B]
+  - [ESC, {h: LShift, t: A}, {h: LGui, t: S}, {h: LAlt, t: D}, {h: LCtrl, t: F}, {h: LCtrl+LGui+LAlt, t: G}, {h: LCtrl+LGui+LAlt, t: H}, {h: LCtrl, t: J}, {h: LAlt, t: K}, {h: LGui, t: L}, {h: LShift, t: ;}, '''']
+  - [{h: MULTIMEDIA, t: MEDIA}, {h: NAV, t: Z}, {h: NAV, t: X}, {h: NAV, t: C}, {h: NAV, t: V}, B]
   - [null, null]
-  - [N, M, ',', ., /, MEDIA]
-  - - DEL
-    - BSPC
-    - TAB
-    - ENT
-    - SPC
-    - BSPC
+  - [N, {h: NUM, t: M}, {h: NUM, t: ','}, {h: NUM, t: .}, {h: NUM, t: /}, {h: MULTIMEDIA, t: MEDIA}]
+  - - {h: NUMNAV, t: DEL}
+    - {h: SYMBOL, t: BSPC}
+    - {h: NUMNAV, t: TAB}
+    - {h: SYMBOL, t: ENT}
+    - {h: NUMNAV, t: SPC}
+    - {h: MULTIMEDIA, t: BSPC}
   SYMBOL:
-  - ['~', '!', '@', '#', $, '%', ^, '&', '*', (, ), PGUP]
-  - ['`', {t: ▽, type: trans}, UP, {t: ▽, type: trans}, QK BOOT, {t: ▽, type: trans}, {t: ▽, type: trans}, P7, P8, P9, P0, PGDN]
-  - [DEL, LEFT, DOWN, RGHT, {t: ▽, type: trans}, '[', ']', P4, P5, P6, +, '|']
-  - [RM NEXT, EE CLR, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '{']
-  - [(, )]
-  - ['}', P1, P2, P3, '-', {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '[', ']', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
+  - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
+  - [{t: ▽, type: trans}, '@', '#', _, '@', null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - ['0', '=', '<', '>', '?', '''']
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - DEL
-    - DEL
     - {t: ▽, type: trans}
-    - P0
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
   NUMNAV:
-  - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-  - [RM TOGG, '!', '@', '#', $, '%', ^, '&', '*', (, ), QK BOOT]
-  - [RM NEXT, MPRV, MNXT, VOLU, PGUP, _, '=', HOME, RM HUEU, RM SATU, RM VALU, \]
-  - [MUTE, MSTP, MPLY, VOLD, PGDN, '-']
-  - [(, {t: ▽, type: trans}]
-  - [+, END, RM HUED, RM SATD, RM VALD, EE CLR]
+  - [{t: ▽, type: trans}, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
+  - [+, '-', '1', '2', '3', '=', HOME, PGUP, UP, PGDN, null, F12]
+  - [',', '.', '4', '5', '6', '-', END, LEFT, DOWN, RIGHT, {t: ▽, type: trans}, null]
+  - ['*', '/', '7', '8', '9', '0']
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
+  - - '='
+    - '0'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  NUM:
+  - [{t: ▽, type: trans}, F1, F2, F3, F4, F5, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [+, '-', '1', '2', '3', '=', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [',', '.', '4', '5', '6', '-', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - ['*', '/', '7', '8', '9', '0']
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - - '='
+    - '0'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  NAV:
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, F6, F7, F8, F9, F10, F11]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, HOME, PGUP, UP, PGDN, null, F12]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, END, LEFT, DOWN, RIGHT, {t: ▽, type: trans}, null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  LEFTNAV:
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, PGUP, UP, PGDN, HOME, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, LEFT, DOWN, RIGHT, END, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  FNKEY:
+  - [null, null, null, null, null, null, null, null, null, null, null, null]
+  - [null, F1, F2, F3, F4, F5, null, null, null, null, null, null]
+  - [null, F6, F7, F8, F9, F10, null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
+  - [QK BOOT, F11, F12, null, null, null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, null, null, null, QK BOOT]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  MULTIMEDIA:
+  - [QK BOOT, null, RM TOGG, RM VALD, RM VALU, EE CLR, null, null, null, null, null, QK BOOT]
+  - [null, null, MUTE, VOLD, VOLU, null, null, null, null, null, null, null]
+  - [null, null, MRWD, MPLY, MFFD, null, null, null, null, null, null, null]
+  - [null, null, null, BRID, BRIU, null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, null, null, null, null]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
