@@ -1,18 +1,18 @@
 layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
 layers:
   BASE:
-  - [QK GESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BSPC]
-  - [TAB, Q, W, E, R, T, Y, U, I, O, P, DEL]
-  - [LCTL, A, S, D, F, G, H, J, K, L, ;, '''']
-  - [LSFT, Z, X, C, V, B]
-  - [HOME, END]
-  - [N, M, ',', ., /, RSFT]
-  - - LGUI
-    - ANY(TL LOWR)
-    - ANY(TL UPPR)
+  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
+  - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
+  - [ESC, A, S, D, F, G, H, J, K, L, ;, '''']
+  - [MEDIA, Z, X, C, V, B]
+  - [null, null]
+  - [N, M, ',', ., /, MEDIA]
+  - - DEL
+    - BSPC
+    - TAB
     - ENT
     - SPC
-    - RALT
+    - BSPC
   SYMBOL:
   - ['~', '!', '@', '#', $, '%', ^, '&', '*', (, ), PGUP]
   - ['`', {t: ▽, type: trans}, UP, {t: ▽, type: trans}, QK BOOT, {t: ▽, type: trans}, {t: ▽, type: trans}, P7, P8, P9, P0, PGDN]
