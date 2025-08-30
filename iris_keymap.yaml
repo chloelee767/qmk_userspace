@@ -3,16 +3,16 @@ layers:
   BASE:
   - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
   - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
-  - [ESC, {h: LShift, t: A}, {h: LGui, t: S}, {h: LAlt, t: D}, {h: LCtrl, t: F}, {h: LCtrl+LGui+LAlt, t: G}, {h: LCtrl+LGui+LAlt, t: H}, {h: LCtrl, t: J}, {h: LAlt, t: K}, {h: LGui, t: L}, {h: LShift, t: ;}, '''']
-  - [{h: MULTIMEDIA, t: MEDIA}, {h: NAV, t: Z}, {h: NAV, t: X}, {h: NAV, t: C}, {h: NAV, t: V}, B]
+  - [ESC, {h: Shft, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Ctrl, t: F}, {h: C+A+G, t: G}, {h: C+A+G, t: H}, {h: Ctrl, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Shft, t: ;}, '''']
+  - [MEDIA, {h: NAV+Shft, t: Z}, {h: NAV+Gui, t: X}, {h: NAV+Alt, t: C}, {h: NAV+Ctrl, t: V}, B]
   - [null, null]
-  - [N, {h: NUM, t: M}, {h: NUM, t: ','}, {h: NUM, t: .}, {h: NUM, t: /}, {h: MULTIMEDIA, t: MEDIA}]
+  - [N, {h: NUM+Ctrl, t: M}, {h: NUM+Alt, t: ','}, {h: NUM+Gui, t: .}, {h: NUM+Shft, t: /}, MEDIA]
   - - {h: NUMNAV, t: DEL}
     - {h: SYMBOL, t: BSPC}
     - {h: NUMNAV, t: TAB}
     - {h: SYMBOL, t: ENT}
     - {h: NUMNAV, t: SPC}
-    - {h: MULTIMEDIA, t: BSPC}
+    - {h: MEDIA, t: BSPC}
   SYMBOL:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '[', ']', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
@@ -91,7 +91,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  MULTIMEDIA:
+  MEDIA:
   - [QK BOOT, null, RM TOGG, RM VALD, RM VALU, EE CLR, null, null, null, null, null, QK BOOT]
   - [null, null, MUTE, VOLD, VOLU, null, null, null, null, null, null, null]
   - [null, null, MRWD, MPLY, MFFD, null, null, null, null, null, null, null]
