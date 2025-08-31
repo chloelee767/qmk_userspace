@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import json
 
-keyboard_json = json.load(open("/Users/chloelee/Code/github/qmk_firmware/keyboards/keebio/iris_ce/rev1/keyboard.json"))
+keyboard_json = json.load(open("/Users/chloelee/Code/qmk_firmware/keyboards/keebio/iris_ce/rev1/keyboard.json"))
 
 layout = keyboard_json["layouts"]["LAYOUT"]["layout"]
 print(layout)
@@ -19,10 +19,10 @@ print(layout)
 # Create the plot
 fig, ax = plt.subplots()
 
-for key in layout:
+for idx, key in enumerate(layout):
     x = key["x"]
     y = -key["y"] # Invert y-axis as the thumb keys are drawn at the top for some reason
-    label = f'{key["matrix"]}'
+    label = f'{key["matrix"]}\n{idx}'
     height = key.get("h", 1)
     width = 1  # Assume width of 1 for simplicity
 
