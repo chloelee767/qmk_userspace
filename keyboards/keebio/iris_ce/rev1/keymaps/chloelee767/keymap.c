@@ -35,19 +35,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
          KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
          /* Qwerty Row */
-         QK_CAPS_WORD_TOGGLE, KC_Q, KC_W, KC_E, KC_R, KC_T,
-         KC_Y, KC_U, KC_I, KC_O, KC_P, QK_CAPS_WORD_TOGGLE,
+         LT(_MULTIMEDIA, QK_CAPS_WORD_TOGGLE), KC_Q, KC_W, KC_E, KC_R, KC_T,
+         KC_Y, KC_U, KC_I, KC_O, KC_P, LT(_MULTIMEDIA, QK_CAPS_WORD_TOGGLE),
          /* Home Row */
          KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LCAG_T(KC_G),
          LCAG_T(KC_H), LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
          /* Zxc Row (Left) */
-         MO(_MULTIMEDIA), LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
+         OSM(MOD_LGUI), LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
          /* Top Thumb Keys */
          XXXXXXX, XXXXXXX,
          /* Zxc Row (Right) */
-         KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), MO(_MULTIMEDIA),
+         KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), KC_MINS,
          /* Bottom Row */
-         LT(_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
+         LT(_LEFTNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
          LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
          ),
 
@@ -562,7 +562,6 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     set_multimedia_layer_leds();
     break;
   case _LEFTNAV:
-    // left nav is only available on lock basis
     set_left_nav_layer_leds(rgb);
     break;
   default:
