@@ -1,12 +1,19 @@
 layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
 layers:
   BASE:
+  # Number Row
   - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
+  # QWERTY Row
   - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
+  # Home Row
   - [ESC, {h: Shft, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Ctrl, t: F}, {h: C+A+G, t: G}, {h: C+A+G, t: H}, {h: Ctrl, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Shft, t: ;}, '''']
+  # ZXCV Row (Left)
   - [Gui, {h: NAV+Shft, t: Z}, {h: NAV+Gui, t: X}, {h: NAV+Alt, t: C}, {h: NAV+Ctrl, t: V}, B]
+  # Top Thumb Keys
   - [MEDIA, MEDIA]
+  # ZXCV Row (Right)
   - [N, {h: NUM+Ctrl, t: M}, {h: NUM+Alt, t: ','}, {h: NUM+Gui, t: .}, {h: NUM+Shft, t: /}, '-']
+  # Bottom Thumb Keys
   - - {h: LEFTNAV, t: DEL}
     - {h: SYMBOL, t: BSPC}
     - {h: NUMNAV, t: TAB}
