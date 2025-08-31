@@ -164,7 +164,7 @@ path.combo {
 
 /* color accent for extra key types */
 rect.held1, rect.combo.held1 {
-fill: #dde;
+  fill: #dde;
 }
 </style>
 <g transform="translate(30, 0)" class="layer-BASE">
@@ -430,6 +430,56 @@ fill: #dde;
 <a href="#MEDIA">
 <text x="0" y="24" class="key hold layer-activator">MEDIA</text>
 </a></g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="574" y="106" width="28" height="26" class="combo"/>
+<text x="588" y="119" class="combo tap">[</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="630" y="99" width="28" height="26" class="combo"/>
+<text x="644" y="112" class="combo tap">]</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="686" y="106" width="28" height="26" class="combo"/>
+<text x="700" y="119" class="combo tap">\</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="658" y="74" width="28" height="26" class="combo"/>
+<text x="672" y="88" class="combo tap">BSPC</text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="714" y="85" width="28" height="26" class="combo"/>
+<text x="728" y="98" class="combo tap">DEL</text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
+<text x="252" y="119" class="combo tap">`</text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="602" y="74" width="28" height="26" class="combo"/>
+<text x="616" y="88" class="combo tap">
+<tspan x="616" dy="-0.6em">NUM</tspan><tspan x="616" dy="1.2em">WORD</tspan>
+</text>
+</g>
+<g class="combo combopos-7">
+<path d="M644,89 l-37,2" class="combo"/>
+<path d="M644,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="630" y="76" width="28" height="26" class="combo"/>
+<text x="644" y="89" class="combo tap">NUM</text>
+</g>
+<g class="combo combopos-8">
+<path d="M196,89 l-37,2" class="combo"/>
+<path d="M196,89 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
+<text x="196" y="89" class="combo tap">NUM</text>
+</g>
+<g class="combo combopos-9">
+<path d="M196,33 l-37,2" class="combo"/>
+<path d="M196,33 l37,2" class="combo"/>
+<rect rx="6" ry="6" x="182" y="20" width="28" height="26" class="combo"/>
+<text x="196" y="33" class="combo tap">
+<tspan x="196" dy="-0.6em">LEFT</tspan><tspan x="196" dy="1.2em">NAV</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 378)" class="layer-SYMBOL">
