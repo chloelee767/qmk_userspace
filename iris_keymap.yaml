@@ -48,8 +48,8 @@ layers:
     - {t: ▽, type: trans}
   LEFTNAV:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-  - [null, null, PGUP, UP, PGDN, HOME, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-  - [null, null, LEFT, DOWN, RIGHT, END, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, PGUP, '$$mdi:arrow-up$$', PGDN, HOME, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, '$$mdi:arrow-left$$',  '$$mdi:arrow-down$$',  '$$mdi:arrow-right$$', END, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
@@ -61,9 +61,9 @@ layers:
     - {t: ▽, type: trans}
   MEDIA:
   - [QK BOOT, null, RM TOGG, RM VALD, RM VALU, EE CLR, null, null, null, null, null, QK BOOT]
-  - [null, null, MUTE, VOLD, VOLU, null, null, null, null, null, null, null]
-  - [null, null, MRWD, MPLY, MFFD, null, null, null, null, null, null, null]
-  - [null, null, null, BRID, BRIU, null]
+  - [null, null, '$$mdi:volume-mute$$', '$$mdi:volume-minus$$', '$$mdi:volume-plus$$', null, null, null, null, null, null, null]
+  - [null, null, '$$mdi:skip-backward$$', '$$mdi:play-pause$$', '$$mdi:skip-forward$$', null, null, null, null, null, null, null]
+  - [null, null, null, '$$mdi:brightness-5$$', '$$mdi:brightness-7$$', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, null, null, null, null, null]
   - - {t: ▽, type: trans}
