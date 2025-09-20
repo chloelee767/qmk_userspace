@@ -443,36 +443,22 @@ rect.held1, rect.combo.held1 {
 <text x="700" y="119" class="combo tap">\</text>
 </g>
 <g class="combo combopos-3">
-<rect rx="6" ry="6" x="658" y="74" width="28" height="26" class="combo"/>
-<text x="672" y="88" class="combo tap">BSPC</text>
-</g>
-<g class="combo combopos-4">
-<rect rx="6" ry="6" x="714" y="85" width="28" height="26" class="combo"/>
-<text x="728" y="98" class="combo tap">DEL</text>
-</g>
-<g class="combo combopos-5">
 <rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
 <text x="252" y="119" class="combo tap">`</text>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="602" y="74" width="28" height="26" class="combo"/>
 <text x="616" y="88" class="combo tap">
 <tspan x="616" dy="-0.6em">NUM</tspan><tspan x="616" dy="1.2em">WORD</tspan>
 </text>
 </g>
-<g class="combo combopos-7">
-<path d="M644,89 l-37,2" class="combo"/>
-<path d="M644,89 l37,2" class="combo"/>
-<rect rx="6" ry="6" x="630" y="76" width="28" height="26" class="combo"/>
-<text x="644" y="89" class="combo tap">NUM</text>
-</g>
-<g class="combo combopos-8">
+<g class="combo combopos-5">
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
 <text x="196" y="89" class="combo tap">NUM</text>
 </g>
-<g class="combo combopos-9">
+<g class="combo combopos-6">
 <path d="M196,33 l-37,2" class="combo"/>
 <path d="M196,33 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="20" width="28" height="26" class="combo"/>

@@ -76,11 +76,8 @@ combos:
   - {p: [19, 31], k: '[', l: ["BASE"]}  # U + J → [
   - {p: [20, 32], k: ']', l: ["BASE"]}  # I + K → ]
   - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
-  - {p: [20, 21], k: BSPC, l: ["BASE"]} # I + O → Backspace
-  - {p: [21, 22], k: DEL, l: ["BASE"]}  # O + P → Delete
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
   - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
-  - {p: [19, 20, 21], k: NUM, l: ["BASE"]} # U + I + O → Num Lock Toggle
   - {p: [14, 15, 16], k: NUM, l: ["BASE"]} # W + E + R → Num Lock Toggle
   - {p: [2, 3, 4], k: LEFT NAV, l: ["BASE"]} # 2 + 3 + 4 → Left Nav Lock Toggle
 draw_config:
