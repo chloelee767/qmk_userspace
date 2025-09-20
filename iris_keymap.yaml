@@ -1,0 +1,88 @@
+layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
+layers:
+  BASE:
+  # Number Row
+  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
+  # QWERTY Row
+  - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
+  # Home Row
+  - [ESC, {h: Shft, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Ctrl, t: F}, {h: C+A+G, t: G}, {h: C+A+G, t: H}, {h: Ctrl, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Shft, t: ;}, '''']
+  # ZXCV Row (Left)
+  - [Gui, {h: NAV+Shft, t: Z}, {h: NAV+Gui, t: X}, {h: NAV+Alt, t: C}, {h: NAV+Ctrl, t: V}, B]
+  # Top Thumb Keys
+  - [MEDIA, MEDIA]
+  # ZXCV Row (Right)
+  - [N, {h: NUM+Ctrl, t: M}, {h: NUM+Alt, t: ','}, {h: NUM+Gui, t: .}, {h: NUM+Shft, t: /}, '-']
+  # Bottom Thumb Keys
+  - - {h: LEFTNAV, t: DEL}
+    - {h: SYMBOL, t: BSPC}
+    - {h: NUMNAV, t: TAB}
+    - {h: SYMBOL, t: ENT}
+    - {h: NUMNAV, t: SPC}
+    - {h: MEDIA, t: BSPC}
+  SYMBOL:
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '[', ']', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
+  - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
+  - [{t: ▽, type: trans}, '@', '#', _, '@', null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - ['0', '=', '<', '>', '?', '''']
+  - - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {type: held1}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  NUMNAV:
+  - [{t: ▽, type: trans}, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
+  - [+, '-', '1', '2', '3', '=', HOME, PGUP, '$$mdi:arrow-up$$', PGDN, null, F12]
+  - [',', '.', '4', '5', '6', '-', END, '$$mdi:arrow-left$$', '$$mdi:arrow-down$$', '$$mdi:arrow-right$$', {t: ▽, type: trans}, null]
+  - ['*', '/', '7', '8', '9', '0']
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, null]
+  - - '='
+    - '0'
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {type: held1}
+    - {t: ▽, type: trans}
+  LEFTNAV:
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, PGUP, '$$mdi:arrow-up$$', PGDN, HOME, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, '$$mdi:arrow-left$$',  '$$mdi:arrow-down$$',  '$$mdi:arrow-right$$', END, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  MEDIA:
+  - [QK BOOT, null, RM TOGG, RM VALD, RM VALU, EE CLR, null, null, null, null, null, QK BOOT]
+  - [null, null, '$$mdi:volume-mute$$', '$$mdi:volume-minus$$', '$$mdi:volume-plus$$', null, null, null, null, null, null, null]
+  - [null, null, '$$mdi:skip-backward$$', '$$mdi:play-pause$$', '$$mdi:skip-forward$$', null, null, null, null, null, null, null]
+  - [null, null, null, '$$mdi:brightness-5$$', '$$mdi:brightness-7$$', null]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [null, null, null, null, null, null]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+combos:
+  - {p: [19, 31], k: '[', l: ["BASE"]}  # U + J → [
+  - {p: [20, 32], k: ']', l: ["BASE"]}  # I + K → ]
+  - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
+  - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
+  - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
+  - {p: [14, 15, 16], k: NUM, l: ["BASE"], a: "top"} # W + E + R → Num Lock Toggle
+  - {p: [2, 3, 4], k: LEFT NAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Left Nav Lock Toggle
+draw_config:
+  svg_extra_style: |
+    /* color accent for extra key types */
+    rect.held1, rect.combo.held1 {
+      fill: #dde;
+    }
