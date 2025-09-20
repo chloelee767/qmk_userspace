@@ -2,4 +2,4 @@
 
 ## Keebio Iris
 
-[Keyboard layout](./iris_keymap.svg)
+![Keyboard layout](./iris_keymap.svg)
