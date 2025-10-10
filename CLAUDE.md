@@ -1,17 +1,23 @@
-# About the keymap diagram
+This is a QMK userspace project for a split keyboard.
 
-We have several SVG keymap diagrams created using the `caksoylar/keymap-drawer` tool. 
-Here are the bash commands for redrawing the diagrams, which will also slow you which are the SVGs and their corresponding config files:
+## QMK firmware
+
+How to build the firmware: `qmk compile -kb keebio/iris_ce/rev1 -km chloelee767`
+
+## Keymap diagrams
+
+We have a SVG diagram of the  created using the `caksoylar/keymap-drawer` tool. 
+How to redraw the diagram from the yaml config:
 ``` sh
 keymap draw iris_keymap.yaml > iris_keymap.svg
 ```
 
-## Conventions 
+### Conventions
 
 - The "QWERTY" layer in the QMK code is named "BASE" in the diagram 
 - The "MULTIMEDIA" layer in the QMK code is named "MEDIA" in the diagram 
 
-## Syntax for keymap yaml:
+### Syntax for keymap yaml:
 
 Syntax for keys:
 - `{t: ▽, type: trans}`: transparent key (ie. pass through to next layer in stack). `_______` in QMK 
