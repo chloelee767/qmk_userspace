@@ -11,7 +11,7 @@ First time setup:
 - Install just
 
 Building the firmware: 
-- Build the firmware: `qmk compile -kb keebio/iris_ce/rev1 -km chloelee767`
+- Build the firmware: `just build`
 
 How to reflash the keyboard:
 - Go to multimedia layer (top uncovered thumb keys) + press top left (left half) / top right key (right half)

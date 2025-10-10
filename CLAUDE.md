@@ -2,7 +2,7 @@ This is a QMK userspace project for a split keyboard.
 
 ## QMK firmware
 
-How to build the firmware: `qmk compile -kb keebio/iris_ce/rev1 -km chloelee767`
+How to build the firmware: `just build`
 
 ## Keymap diagrams
 
