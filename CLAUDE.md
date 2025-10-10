@@ -6,11 +6,10 @@ How to build the firmware: `qmk compile -kb keebio/iris_ce/rev1 -km chloelee767`
 
 ## Keymap diagrams
 
-We have a SVG diagram of the  created using the `caksoylar/keymap-drawer` tool. 
-How to redraw the diagram from the yaml config:
-``` sh
-keymap draw iris_keymap.yaml > iris_keymap.svg
-```
+We have a SVG diagram created using the `caksoylar/keymap-drawer` tool. 
+Updating the diagram:
+- Update `diagrams/iris_keymap.yaml`
+- Run `just diagrams`
 
 ### Conventions
 
