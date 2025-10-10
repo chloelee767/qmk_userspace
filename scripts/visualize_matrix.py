@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Draw a keyboard layout showing the matrix positions and number of each key
+
 import matplotlib.pyplot as plt
 import json
 
