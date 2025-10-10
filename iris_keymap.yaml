@@ -8,7 +8,7 @@ layers:
   # Home Row
   - [ESC, {h: Shft, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Ctrl, t: F}, {h: C+A+G, t: G}, {h: C+A+G, t: H}, {h: Ctrl, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Shft, t: ;}, '''']
   # ZXCV Row (Left)
-  - [Gui, {h: NAV+Shft, t: Z}, {h: NAV+Gui, t: X}, {h: NAV+Alt, t: C}, {h: NAV+Ctrl, t: V}, B]
+  - [OSM Gui, {h: NAV+Shft, t: Z}, {h: NAV+Gui, t: X}, {h: NAV+Alt, t: C}, {h: NAV+Ctrl, t: V}, B]
   # Top Thumb Keys
   - [MEDIA, MEDIA]
   # ZXCV Row (Right)
@@ -64,14 +64,14 @@ layers:
   - [null, null, '$$mdi:volume-mute$$', '$$mdi:volume-minus$$', '$$mdi:volume-plus$$', null, null, null, null, null, null, null]
   - [null, null, '$$mdi:skip-backward$$', '$$mdi:play-pause$$', '$$mdi:skip-forward$$', null, null, null, null, null, null, null]
   - [null, null, null, '$$mdi:brightness-5$$', '$$mdi:brightness-7$$', null]
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{type: held1}, {type: held2}]
   - [null, null, null, null, null, null]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held}
 combos:
   - {p: [19, 31], k: '[', l: ["BASE"]}  # U + J → [
   - {p: [20, 32], k: ']', l: ["BASE"]}  # I + K → ]
@@ -85,4 +85,7 @@ draw_config:
     /* color accent for extra key types */
     rect.held1, rect.combo.held1 {
       fill: #dde;
+    }
+    rect.held2, rect.combo.held2 {
+      fill: #e6e3e3;
     }
