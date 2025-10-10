@@ -1,6 +1,6 @@
 #pragma once
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 150
 #define PERMISSIVE_HOLD
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_TERM 25
