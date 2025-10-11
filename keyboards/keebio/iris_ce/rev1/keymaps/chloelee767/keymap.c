@@ -10,8 +10,8 @@ enum custom_layers {
 
   // make lockable layers lower numbered
   // so that we can use the higher layers if needed
-  _NUM, // left side of NUMNAV layer
-  _NAV, // right side of NUMNAV layer
+  _LEFT_NUMNAV, // left side of NUMNAV layer
+  _RIGHT_NUMNAV, // right side of NUMNAV layer
   _LEFTNAV,
   _FNKEY,
 
@@ -41,11 +41,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LCAG_T(KC_G),
          LCAG_T(KC_H), LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
          /* Zxc Row (Left) */
-         OSM(MOD_LGUI), LT(_NAV,KC_Z), LT(_NAV,KC_X), LT(_NAV,KC_C), LT(_NAV,KC_V), KC_B,
+         OSM(MOD_LGUI), LT(_RIGHT_NUMNAV,KC_Z), LT(_RIGHT_NUMNAV,KC_X), LT(_RIGHT_NUMNAV,KC_C), LT(_RIGHT_NUMNAV,KC_V), KC_B,
          /* Top Thumb Keys */
          MO(_MULTIMEDIA), MO(_MULTIMEDIA),
          /* Zxc Row (Right) */
-         KC_N, LT(_NUM,KC_M), LT(_NUM,KC_COMM), LT(_NUM,KC_DOT), LT(_NUM,KC_SLSH), KC_MINS,
+         KC_N, LT(_LEFT_NUMNAV,KC_M), LT(_LEFT_NUMNAV,KC_COMM), LT(_LEFT_NUMNAV,KC_DOT), LT(_LEFT_NUMNAV,KC_SLSH), KC_MINS,
          /* Bottom Row */
          LT(_LEFTNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
          LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          _______, _______, _______
          ),
 
-  [_NUM] = LAYOUT(
+  [_LEFT_NUMNAV] = LAYOUT(
                   /* Number Row */
                   _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
                   _______, _______, _______, _______, _______, _______,
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______, _______, _______
                   ),
 
-  [_NAV] = LAYOUT(
+  [_RIGHT_NUMNAV] = LAYOUT(
                   /* Number Row */
                   _______, _______, _______, _______, _______, _______,
                   KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
@@ -294,28 +294,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   // Custom code goes after achordion
 
   switch (keycode) {
-    // num-mods layer
-  case LT(_NUM,KC_DOT):
-  case LT(_NUM,KC_O):
-    // Behave as KC_DOT/KC_O on tap, LM(_NUM,MOD_LGUI) on hold
+    // left numnav-mods layer
+  case LT(_LEFT_NUMNAV,KC_DOT):
+  case LT(_LEFT_NUMNAV,KC_O):
+    // Behave as KC_DOT/KC_O on tap, LM(_LEFT_NUMNAV,MOD_LGUI) on hold
     return apply_mod_if_holding(KC_LGUI, record);
-  case LT(_NUM,KC_COMM):
+  case LT(_LEFT_NUMNAV,KC_COMM):
     return apply_mod_if_holding(KC_LALT, record);
-  case LT(_NUM,KC_M):
+  case LT(_LEFT_NUMNAV,KC_M):
     return apply_mod_if_holding(KC_LCTL, record);
-  case LT(_NUM,KC_SLSH):
+  case LT(_LEFT_NUMNAV,KC_SLSH):
     return apply_mod_if_holding(KC_LSFT, record);
 
-    // nav-mods layer
-  case LT(_NAV,KC_X):
-  case LT(_NAV,KC_W):
-    // Behave as KC_DOT/KC_O on tap, LM(_NAV,MOD_LGUI) on hold
+    // right numnav-mods layer
+  case LT(_RIGHT_NUMNAV,KC_X):
+  case LT(_RIGHT_NUMNAV,KC_W):
+    // Behave as KC_DOT/KC_O on tap, LM(_RIGHT_NUMNAV,MOD_LGUI) on hold
     return apply_mod_if_holding(KC_LGUI, record);
-  case LT(_NAV,KC_C):
+  case LT(_RIGHT_NUMNAV,KC_C):
     return apply_mod_if_holding(KC_LALT, record);
-  case LT(_NAV,KC_V):
+  case LT(_RIGHT_NUMNAV,KC_V):
     return apply_mod_if_holding(KC_LCTL, record);
-  case LT(_NAV,KC_Z):
+  case LT(_RIGHT_NUMNAV,KC_Z):
     return apply_mod_if_holding(KC_LSFT, record);
 
     // caps word / num word
@@ -390,7 +390,7 @@ void caps_word_set_user(bool active) {
   if (active) {
     // Do something when Caps Word activates.
     if (g_caps_word_mode == CWMODE_NUMBER) {
-      layer_on(_NUM);
+      layer_on(_LEFT_NUMNAV);
     }
   } else {
     // Do something when Caps Word deactivates.
@@ -438,7 +438,7 @@ rgb_t get_default_rgb_color(void) {
   return rgb_white;
 }
 
-void set_numlayer_leds(rgb_t rgb) {
+void set_left_numnav_leds(rgb_t rgb) {
   for (uint8_t i = 1; i <= 3; i++) {
     for (uint8_t j = 2; j <= 4; j++) {
       set_rgb(i, j, rgb);
@@ -454,7 +454,7 @@ void set_numlayer_leds(rgb_t rgb) {
   }
 }
 
-void set_navlayer_leds(rgb_t rgb) {
+void set_right_numnav_leds(rgb_t rgb) {
   set_rgb(6, 3, rgb); // up arrow
   set_rgb(7, 4, rgb); // left arrow
   set_rgb(7, 3, rgb); // down arrow
@@ -468,7 +468,7 @@ void set_left_nav_layer_leds(rgb_t rgb) {
   set_rgb(2, 4, rgb); // right arrow
 
   // FIXME mirroring workaround
-  set_navlayer_leds(get_default_rgb_color());
+  set_right_numnav_leds(get_default_rgb_color());
 }
 
 
@@ -546,14 +546,14 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
   switch(get_highest_layer(layer_state|default_layer_state)) {
   case _NUMNAV:
-    set_numlayer_leds(rgb); // set left half first
-    set_navlayer_leds(rgb);
+    set_left_numnav_leds(rgb); // set left half first
+    set_right_numnav_leds(rgb);
     break;
-  case _NUM:
-    set_numlayer_leds(rgb);
+  case _LEFT_NUMNAV:
+    set_left_numnav_leds(rgb);
     break;
-  case _NAV:
-    set_navlayer_leds(rgb);
+  case _RIGHT_NUMNAV:
+    set_right_numnav_leds(rgb);
     break;
   case _FNKEY:
     set_fnkeylayer_leds(rgb);
