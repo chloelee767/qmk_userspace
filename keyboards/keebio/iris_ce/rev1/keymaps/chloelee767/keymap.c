@@ -417,6 +417,8 @@ void set_all_leds(uint8_t led_min, uint8_t led_max, rgb_t rgb) {
   }
 }
 
+// row and col are matrix positions, which can be found in the keymap.json file.
+// you can use scripts/visualize_matrix.py to visualize it on the keyboard.
 void set_rgb(uint8_t row, uint8_t col, rgb_t rgb) {
   if (row >= MATRIX_ROWS || col >= MATRIX_COLS) {
     return;
