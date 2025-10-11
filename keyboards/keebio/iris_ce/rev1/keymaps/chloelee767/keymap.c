@@ -24,7 +24,6 @@ enum custom_layers {
 enum my_keycodes {
   UKC_NUM_WORD_TOGGLE = SAFE_RANGE,
   UKC_NUM_LOCK_TOGGLE,
-  UKC_LEFT_NAV_LOCK_TOGGLE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -47,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          /* Zxc Row (Right) */
          KC_N, LT(_LEFT_NUMNAV,KC_M), LT(_LEFT_NUMNAV,KC_COMM), LT(_LEFT_NUMNAV,KC_DOT), LT(_LEFT_NUMNAV,KC_SLSH), KC_MINS,
          /* Bottom Row */
-         LT(_LEFT_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
+         LT(_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
          LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
          ),
 
@@ -339,12 +338,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       return false;
     }
     break;
-  case UKC_LEFT_NAV_LOCK_TOGGLE:
-    if (record->event.pressed) {
-      toggle_layer_lock(_LEFTNAV);
-      return false;
-    }
-    break;
   }
 
   return true;
@@ -359,26 +352,20 @@ void matrix_scan_user(void) {
 const uint16_t PROGMEM combo_uj[] = {KC_U, LCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
-const uint16_t PROGMEM combo_io[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_op[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_wer[] = {KC_W, KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM combo_234[] = {KC_2, KC_3, KC_4, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
   COMBO(combo_ik, KC_RIGHT_BRACKET),
   COMBO(combo_ol, KC_BSLS),
-  COMBO(combo_io, KC_BSPC),
-  COMBO(combo_op, KC_DEL),
   COMBO(combo_rf, KC_GRV),
 
   COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
-  COMBO(combo_wer, UKC_NUM_LOCK_TOGGLE),
-  COMBO(combo_234, UKC_LEFT_NAV_LOCK_TOGGLE),
+  COMBO(combo_234, UKC_NUM_LOCK_TOGGLE),
 };
 
 // Caps word

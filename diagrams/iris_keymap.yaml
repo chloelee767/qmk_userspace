@@ -65,8 +65,8 @@ combos:
   - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
   - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
-  - {p: [14, 15, 16], k: NUM, l: ["BASE"], a: "top"} # W + E + R → Num Lock Toggle
-  - {p: [2, 3, 4], k: LEFT NAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Left Nav Lock Toggle
+  - {p: [19, 20, 21], k: NUMNAV, l: ["BASE"], a: "top"} # U + I + O → Num Lock Toggle
+  - {p: [2, 3, 4], k: NUMNAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Num Lock Toggle
 draw_config:
   svg_extra_style: |
     /* color accent for extra key types */
