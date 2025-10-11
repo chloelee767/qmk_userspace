@@ -441,28 +441,28 @@ rgb_t get_default_rgb_color(void) {
 }
 
 void set_left_numnav_leds(rgb_t rgb) {
-  for (uint8_t i = 1; i <= 3; i++) {
-    for (uint8_t j = 2; j <= 4; j++) {
-      set_rgb(i, j, rgb);
-    }
-  }
+  set_rgb(1, 3, rgb); // up arrow
+  set_rgb(2, 2, rgb); // left arrow
+  set_rgb(2, 3, rgb); // down arrow
+  set_rgb(2, 4, rgb); // right arrow
 
   // FIXME: workaround for LED mirroring bug - setting LEDs at certain positions on the left half
   // causes LEDs at the corresponding mirrored positions on the right half to also light up.
   // We need to explicitly reset the right side LEDs back to the default color.
+  // Note that the same issue doesn't occur when setting right side LEDs.
   rgb_t rgb_default = get_default_rgb_color();
-  for (uint8_t i = 6; i <= 8; i++) {
-    for (uint8_t j = 2; j <= 4; j++) {
-      set_rgb(i, j, rgb_default);
-    }
-  }
+  set_rgb(6, 3, rgb_default);
+  set_rgb(7, 2, rgb_default);
+  set_rgb(7, 3, rgb_default);
+  set_rgb(7, 4, rgb_default);
 }
 
 void set_right_numnav_leds(rgb_t rgb) {
-  set_rgb(6, 3, rgb); // up arrow
-  set_rgb(7, 4, rgb); // left arrow
-  set_rgb(7, 3, rgb); // down arrow
-  set_rgb(7, 2, rgb); // right arrow
+  for (uint8_t i = 6; i <= 8; i++) {
+    for (uint8_t j = 2; j <= 4; j++) {
+      set_rgb(i, j, rgb);
+    }
+  }
 }
 
 void set_left_nav_layer_leds(rgb_t rgb) {
@@ -472,7 +472,11 @@ void set_left_nav_layer_leds(rgb_t rgb) {
   set_rgb(2, 4, rgb); // right arrow
 
   // FIXME: workaround for mirroring bug (see earlier comment for details)
-  set_right_numnav_leds(get_default_rgb_color());
+  rgb_t rgb_default = get_default_rgb_color();
+  set_rgb(6, 3, rgb_default);
+  set_rgb(7, 2, rgb_default);
+  set_rgb(7, 3, rgb_default);
+  set_rgb(7, 4, rgb_default);
 }
 
 
