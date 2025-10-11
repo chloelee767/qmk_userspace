@@ -10,8 +10,8 @@ enum custom_layers {
 
   // make lockable layers lower numbered
   // so that we can use the higher layers if needed
-  _NUM,
-  _NAV,
+  _NUM, // left side of NUMNAV layer
+  _NAV, // right side of NUMNAV layer
   _LEFTNAV,
   _FNKEY,
 
