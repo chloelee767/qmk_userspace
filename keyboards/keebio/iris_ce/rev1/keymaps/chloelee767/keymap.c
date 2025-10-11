@@ -445,7 +445,9 @@ void set_left_numnav_leds(rgb_t rgb) {
     }
   }
 
-  // FIXME workaround - set right hand leds to fix mirroring
+  // FIXME: workaround for LED mirroring bug - setting LEDs at certain positions on the left half
+  // causes LEDs at the corresponding mirrored positions on the right half to also light up.
+  // We need to explicitly reset the right side LEDs back to the default color.
   rgb_t rgb_default = get_default_rgb_color();
   for (uint8_t i = 6; i <= 8; i++) {
     for (uint8_t j = 2; j <= 4; j++) {
@@ -467,7 +469,7 @@ void set_left_nav_layer_leds(rgb_t rgb) {
   set_rgb(2, 3, rgb); // down arrow
   set_rgb(2, 4, rgb); // right arrow
 
-  // FIXME mirroring workaround
+  // FIXME: workaround for mirroring bug (see earlier comment for details)
   set_right_numnav_leds(get_default_rgb_color());
 }
 
@@ -483,7 +485,7 @@ void set_fnkeylayer_leds(rgb_t rgb) {
   set_rgb(3, 1, rgb);
   set_rgb(3, 2, rgb);
 
-  // FIXME workaround - set right hand leds to fix mirroring
+  // FIXME: workaround for mirroring bug (see earlier comment for details)
   rgb_t rgb_default = get_default_rgb_color();
   for (uint8_t i = 6; i <= 8; i++) {
     for (uint8_t j = 1; j <= 5; j++) {
@@ -527,7 +529,7 @@ void set_multimedia_layer_leds(void) {
   set_rgb(1, 3, rgb);
   set_rgb(1, 4, rgb);
 
-  // FIXME mirroring workaround
+  // FIXME: workaround for mirroring bug (see earlier comment for details)
   rgb_t rgb_default = get_default_rgb_color();
   set_rgb(6, 3, rgb_default);
   set_rgb(6, 4, rgb_default);
