@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          /* Zxc Row (Right) */
          KC_N, LT(_LEFT_NUMNAV,KC_M), LT(_LEFT_NUMNAV,KC_COMM), LT(_LEFT_NUMNAV,KC_DOT), LT(_LEFT_NUMNAV,KC_SLSH), KC_MINS,
          /* Bottom Row */
-         LT(_LEFTNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
+         LT(_LEFT_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
          LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
          ),
 
@@ -79,20 +79,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
          KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
          /* Qwerty Row */
-         KC_PLUS, KC_MINS, KC_1, KC_2, KC_3, KC_EQL,
-         KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, KC_F12,
+         XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
+         KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
          /* Home Row */
-         KC_COMM, KC_DOT, KC_4, KC_5, KC_6, KC_MINS,
-         KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, XXXXXXX,
+         XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+         KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
          /* Zxc Row (Left) */
-         KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_0,
+         XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
          /* Top Thumb Keys */
          _______, _______,
          /* Zxc Row (Right) */
-         XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
+         KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
          /* Bottom Row */
-         KC_EQL, KC_0, _______,
-         _______, _______, _______
+         _______, _______, _______,
+         _______, _______, KC_0
          ),
 
   [_LEFT_NUMNAV] = LAYOUT(
@@ -100,19 +100,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
                   _______, _______, _______, _______, _______, _______,
                   /* Qwerty Row */
-                  KC_PLUS, KC_MINS, KC_1, KC_2, KC_3, KC_EQL,
+                  XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
                   _______, _______, _______, _______, _______, _______,
                   /* Home Row */
-                  KC_COMM, KC_DOT, KC_4, KC_5, KC_6, KC_MINS,
+                  XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
                   _______, _______, _______, _______, _______, _______,
                   /* Zxc Row (Left) */
-                  KC_ASTR, KC_SLSH, KC_7, KC_8, KC_9, KC_0,
+                  XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
                   /* Top Thumb Keys */
                   _______, _______,
                   /* Zxc Row (Right) */
                   _______, _______, _______, _______, _______, _______,
                   /* Bottom Row */
-                  KC_EQL, KC_0, _______,
+                  _______, _______, _______,
                   _______, _______, _______
                   ),
 
@@ -122,19 +122,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
                   /* Qwerty Row */
                   _______, _______, _______, _______, _______, _______,
-                  KC_HOME, KC_PGUP, KC_UP, KC_PGDN, XXXXXXX, KC_F12,
+                  KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
                   /* Home Row */
                   _______, _______, _______, _______, _______, _______,
-                  KC_END, KC_LEFT, KC_DOWN, KC_RGHT, KC_LGUI, XXXXXXX,
+                  KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
                   /* Zxc Row (Left) */
                   _______, _______, _______, _______, _______, _______,
                   /* Top Thumb Keys */
                   _______, _______,
                   /* Zxc Row (Right) */
-                  XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
+                  KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
                   /* Bottom Row */
                   _______, _______, _______,
-                  _______, _______, _______
+                  _______, _______, KC_0
                   ),
 
   [_LEFTNAV] = LAYOUT(
@@ -390,7 +390,7 @@ void caps_word_set_user(bool active) {
   if (active) {
     // Do something when Caps Word activates.
     if (g_caps_word_mode == CWMODE_NUMBER) {
-      layer_on(_LEFT_NUMNAV);
+      layer_on(_RIGHT_NUMNAV);
     }
   } else {
     // Do something when Caps Word deactivates.
