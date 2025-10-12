@@ -161,14 +161,6 @@ path.combo {
     visibility: hidden;
 }
 /* End Tabler Icons Cleanup */
-
-/* color accent for extra key types */
-rect.held1, rect.combo.held1 {
-  fill: #dde;
-}
-rect.held2, rect.combo.held2 {
-  fill: #e6e3e3;
-}
 </style>
 <g transform="translate(30, 0)" class="layer-BASE">
 <text x="0" y="28" class="label" id="BASE">BASE:</text>
@@ -689,8 +681,8 @@ rect.held2, rect.combo.held2 {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(498, 294)" class="key held1 keypos-53">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held1"/>
+<g transform="translate(498, 294)" class="key held keypos-53">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(560, 273)" class="key trans keypos-54">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -913,8 +905,8 @@ rect.held2, rect.combo.held2 {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(560, 273)" class="key held1 keypos-54">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held1"/>
+<g transform="translate(560, 273)" class="key held keypos-54">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(616, 266)" class="key keypos-55">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1077,11 +1069,11 @@ rect.held2, rect.combo.held2 {
 <g transform="translate(308, 210)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(372, 238)" class="key held1 keypos-42">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held1"/>
+<g transform="translate(372, 238)" class="key held keypos-42">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
-<g transform="translate(468, 238)" class="key held2 keypos-43">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held2"/>
+<g transform="translate(468, 238)" class="key held keypos-43">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(532, 210)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

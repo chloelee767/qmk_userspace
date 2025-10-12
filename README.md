@@ -2,6 +2,8 @@
 
 ## Keebio Iris
 
+Note: for the layer switch keys, only 1 of the shaded key needs to be held. That is to say, most layers have multiple possible layer switch keys.
+
 ![Keyboard layout](./diagrams/iris_keymap.svg)
 
 ## Development
