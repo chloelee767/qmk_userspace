@@ -17,7 +17,7 @@ Building the firmware:
 
 How to reflash the keyboard:
 - Go to multimedia layer (top uncovered thumb keys) + press top left (left half) / top right key (right half)
-- Ideally we should flash both halves of the keyboard. Some features will work fine after flashing both halves (which firmware we use depends on which half is plugged in as the main), some will not.
+- Ideally we should flash both halves of the keyboard. Some features will work fine after flashing just 1 half (which firmware we use depends on which half is plugged in as the main), some will not.
 
 Updating the diagram:
 - Update `diagrams/iris_keymap.yaml`
