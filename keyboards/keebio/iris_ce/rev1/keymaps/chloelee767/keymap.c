@@ -298,10 +298,13 @@ void matrix_scan_user(void) {
 
 // Combos
 
+// Note: we must use the entire keycode. 
+// Eg. tap-hold keycodes like LCTL_T(KC_J) won't work if we just use KC_J
 const uint16_t PROGMEM combo_uj[] = {KC_U, LCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
+const uint16_t PROGMEM combo_de[] = {LALT_T(KC_D), KC_E, COMBO_END};
 const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_234[] = {KC_2, KC_3, KC_4, COMBO_END};
@@ -311,6 +314,7 @@ combo_t key_combos[] = {
   COMBO(combo_ik, KC_RIGHT_BRACKET),
   COMBO(combo_ol, KC_BSLS),
   COMBO(combo_rf, KC_GRV),
+  COMBO(combo_de, KC_TILD),
 
   COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),

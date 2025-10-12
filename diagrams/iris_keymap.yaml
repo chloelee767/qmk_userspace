@@ -64,6 +64,7 @@ combos:
   - {p: [20, 32], k: ']', l: ["BASE"]}  # I + K → ]
   - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
+  - {p: [15, 27], k: '~', l: ["BASE"]}  # D + E → ~
   - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
   - {p: [19, 20, 21], k: NUMNAV, l: ["BASE"], a: "top"} # U + I + O → Num Lock Toggle
   - {p: [2, 3, 4], k: NUMNAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Num Lock Toggle
