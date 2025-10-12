@@ -24,133 +24,133 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] =
   LAYOUT(
-         /* Number Row */
-         KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
-         KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
-         /* Qwerty Row */
-         QK_CAPS_WORD_TOGGLE, KC_Q, KC_W, KC_E, KC_R, KC_T,
-         KC_Y, KC_U, KC_I, KC_O, KC_P, QK_CAPS_WORD_TOGGLE,
-         /* Home Row */
-         KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LCAG_T(KC_G),
-         LCAG_T(KC_H), LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
-         /* Zxc Row (Left) */
-         OSM(MOD_LGUI), LT(_RIGHT_NUMNAV,KC_Z), LT(_RIGHT_NUMNAV,KC_X), LT(_RIGHT_NUMNAV,KC_C), LT(_RIGHT_NUMNAV,KC_V), KC_B,
-         /* Top Thumb Keys */
-         MO(_MULTIMEDIA), MO(_MULTIMEDIA),
-         /* Zxc Row (Right) */
-         KC_N, LT(_LEFT_NUMNAV,KC_M), LT(_LEFT_NUMNAV,KC_COMM), LT(_LEFT_NUMNAV,KC_DOT), LT(_LEFT_NUMNAV,KC_SLSH), KC_MINS,
-         /* Bottom Row */
-         LT(_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
-         LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
-         ),
+    /* Number Row */
+    KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
+    KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
+    /* Qwerty Row */
+    QK_CAPS_WORD_TOGGLE, KC_Q, KC_W, KC_E, KC_R, KC_T,
+    KC_Y, KC_U, KC_I, KC_O, KC_P, QK_CAPS_WORD_TOGGLE,
+    /* Home Row */
+    KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LCAG_T(KC_G),
+    LCAG_T(KC_H), LCTL_T(KC_J), LALT_T(KC_K), LGUI_T(KC_L), LSFT_T(KC_SCLN), KC_QUOT,
+    /* Zxc Row (Left) */
+    OSM(MOD_LGUI), LT(_RIGHT_NUMNAV,KC_Z), LT(_RIGHT_NUMNAV,KC_X), LT(_RIGHT_NUMNAV,KC_C), LT(_RIGHT_NUMNAV,KC_V), KC_B,
+    /* Top Thumb Keys */
+    MO(_MULTIMEDIA), MO(_MULTIMEDIA),
+    /* Zxc Row (Right) */
+    KC_N, LT(_LEFT_NUMNAV,KC_M), LT(_LEFT_NUMNAV,KC_COMM), LT(_LEFT_NUMNAV,KC_DOT), LT(_LEFT_NUMNAV,KC_SLSH), KC_MINS,
+    /* Bottom Row */
+    LT(_NUMNAV,KC_DEL), LT(_SYMBOL,KC_BSPC), LT(_NUMNAV,KC_TAB),
+    LT(_SYMBOL,KC_ENT), LT(_NUMNAV,KC_SPC), LT(_MULTIMEDIA,KC_BSPC)
+  ),
 
   [_SYMBOL] =
   LAYOUT(
-         /* Number Row */
-         _______, _______, _______, _______, _______, _______,
-         _______, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, _______, _______, _______,
-         /* Qwerty Row */
-         _______, XXXXXXX, KC_PPLS, KC_EQL, KC_GRV, XXXXXXX, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
-         KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
-         /* Home Row */
-         _______, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
-         KC_DLR, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_DQUO,
-         /* Zxc Row (Left) */
-         _______, KC_AT, KC_HASH, KC_UNDS, KC_AT, XXXXXXX,
-         /* Top Thumb Keys */
-         _______, _______,
-         /* Zxc Row (Right) */
-         KC_0, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
-         /* Bottom Row */
-         _______, _______, _______,
-         _______, _______, _______
-         ),
+    /* Number Row */
+    _______, _______, _______, _______, _______, _______,
+    _______, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, _______, _______, _______,
+    /* Qwerty Row */
+    _______, XXXXXXX, KC_PPLS, KC_EQL, KC_GRV, XXXXXXX, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
+    KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
+    /* Home Row */
+    _______, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
+    KC_DLR, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_DQUO,
+    /* Zxc Row (Left) */
+    _______, KC_AT, KC_HASH, KC_UNDS, KC_AT, XXXXXXX,
+    /* Top Thumb Keys */
+    _______, _______,
+    /* Zxc Row (Right) */
+    KC_0, KC_EQL, KC_LT, KC_GT, KC_QUES, KC_QUOT,
+    /* Bottom Row */
+    _______, _______, _______,
+    _______, _______, _______
+  ),
 
   [_NUMNAV] =
   LAYOUT(
-         /* Number Row */
-         _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-         KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
-         /* Qwerty Row */
-         XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
-         KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
-         /* Home Row */
-         XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
-         KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
-         /* Zxc Row (Left) */
-         XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
-         /* Top Thumb Keys */
-         _______, _______,
-         /* Zxc Row (Right) */
-         KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
-         /* Bottom Row */
-         _______, _______, _______,
-         _______, _______, KC_0
-         ),
+    /* Number Row */
+    _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
+    KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+    /* Qwerty Row */
+    XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
+    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
+    /* Home Row */
+    XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+    KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
+    /* Zxc Row (Left) */
+    XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
+    /* Top Thumb Keys */
+    _______, _______,
+    /* Zxc Row (Right) */
+    KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
+    /* Bottom Row */
+    _______, _______, _______,
+    _______, _______, KC_0
+  ),
 
   [_LEFT_NUMNAV] = LAYOUT(
-                  /* Number Row */
-                  _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-                  _______, _______, _______, _______, _______, _______,
-                  /* Qwerty Row */
-                  XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
-                  _______, _______, _______, _______, _______, _______,
-                  /* Home Row */
-                  XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
-                  _______, _______, _______, _______, _______, _______,
-                  /* Zxc Row (Left) */
-                  XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
-                  /* Top Thumb Keys */
-                  _______, _______,
-                  /* Zxc Row (Right) */
-                  _______, _______, _______, _______, _______, _______,
-                  /* Bottom Row */
-                  _______, _______, _______,
-                  _______, _______, _______
-                  ),
+    /* Number Row */
+    _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
+    _______, _______, _______, _______, _______, _______,
+    /* Qwerty Row */
+    XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
+    _______, _______, _______, _______, _______, _______,
+    /* Home Row */
+    XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+    _______, _______, _______, _______, _______, _______,
+    /* Zxc Row (Left) */
+    XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
+    /* Top Thumb Keys */
+    _______, _______,
+    /* Zxc Row (Right) */
+    _______, _______, _______, _______, _______, _______,
+    /* Bottom Row */
+    _______, _______, _______,
+    _______, _______, _______
+  ),
 
   [_RIGHT_NUMNAV] = LAYOUT(
-                  /* Number Row */
-                  _______, _______, _______, _______, _______, _______,
-                  KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
-                  /* Qwerty Row */
-                  _______, _______, _______, _______, _______, _______,
-                  KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
-                  /* Home Row */
-                  _______, _______, _______, _______, _______, _______,
-                  KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
-                  /* Zxc Row (Left) */
-                  _______, _______, _______, _______, _______, _______,
-                  /* Top Thumb Keys */
-                  _______, _______,
-                  /* Zxc Row (Right) */
-                  KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
-                  /* Bottom Row */
-                  _______, _______, _______,
-                  _______, _______, KC_0
-                  ),
+    /* Number Row */
+    _______, _______, _______, _______, _______, _______,
+    KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+    /* Qwerty Row */
+    _______, _______, _______, _______, _______, _______,
+    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
+    /* Home Row */
+    _______, _______, _______, _______, _______, _______,
+    KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
+    /* Zxc Row (Left) */
+    _______, _______, _______, _______, _______, _______,
+    /* Top Thumb Keys */
+    _______, _______,
+    /* Zxc Row (Right) */
+    KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH, KC_ASTR,
+    /* Bottom Row */
+    _______, _______, _______,
+    _______, _______, KC_0
+  ),
 
   [_MULTIMEDIA] =
   LAYOUT(
-         /* Number Row */
-         QK_BOOT, XXXXXXX, RM_TOGG, RM_VALD, RM_VALU, QK_CLEAR_EEPROM,
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
-         /* Qwerty Row */
-         XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Home Row */
-         XXXXXXX, XXXXXXX, KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX,
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Zxc Row (Left) */
-         XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX,
-         /* Top Thumb Keys */
-         _______, _______,
-         /* Zxc Row (Right) */
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Bottom Row */
-         _______, _______, _______,
-         _______, _______, _______
-         )
+    /* Number Row */
+    QK_BOOT, XXXXXXX, RM_TOGG, RM_VALD, RM_VALU, QK_CLEAR_EEPROM,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+    /* Qwerty Row */
+    XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    /* Home Row */
+    XXXXXXX, XXXXXXX, KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    /* Zxc Row (Left) */
+    XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX,
+    /* Top Thumb Keys */
+    _______, _______,
+    /* Zxc Row (Right) */
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    /* Bottom Row */
+    _______, _______, _______,
+    _______, _______, _______
+  )
 
 };
 
@@ -298,7 +298,7 @@ void matrix_scan_user(void) {
 
 // Combos
 
-// Note: we must use the entire keycode. 
+// Note: we must use the entire keycode.
 // Eg. tap-hold keycodes like LCTL_T(KC_J) won't work if we just use KC_J
 const uint16_t PROGMEM combo_uj[] = {KC_U, LCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
