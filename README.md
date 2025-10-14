@@ -2,7 +2,9 @@
 
 ## Keebio Iris
 
-Note: for the layer switch keys, only 1 of the shaded key needs to be held. That is to say, most layers have multiple possible layer switch keys.
+Notes: 
+- for the layer switch keys, only 1 of the shaded key needs to be held. That is to say, most layers have multiple possible layer switch keys.
+- dotted outline keys: rarely used keys, considering to remove
 
 ![Keyboard layout](./diagrams/iris_keymap.svg)
 
