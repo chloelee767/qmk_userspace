@@ -2,7 +2,7 @@ layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
 layers:
   BASE:
   # Number Row
-  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
+  - [{t: '`', type: ghost}, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
   # QWERTY Row
   - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
   # Home Row
@@ -24,7 +24,7 @@ layers:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '[', ']', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
   - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
-  - [{t: ▽, type: trans}, '@', '#', _, '@', null]
+  - [{t: ▽, type: trans}, {t: '@', type: ghost}, '#', _, '@', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - ['0', '=', '<', '>', '?', '''']
   - - {t: ▽, type: trans}
@@ -81,3 +81,9 @@ combos:
   - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
   - {p: [19, 20, 21], k: NUM, l: ["BASE"], a: "top"} # U + I + O → Num Lock Toggle
   - {p: [2, 3, 4], k: LEFT NAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Left Nav Lock Toggle
+draw_config:
+  svg_extra_style: |
+    /* custom style for ghost keys */
+    text.ghost {
+      opacity: 0.5;
+    }
