@@ -267,9 +267,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   // Custom code goes after achordion
 
   switch (keycode) {
-    // left numnav-mods layer
+  // left numnav-mods layer
   case LT(_LEFT_NUMNAV,KC_DOT):
-  case LT(_LEFT_NUMNAV,KC_O):
     // Behave as KC_DOT/KC_O on tap, LM(_LEFT_NUMNAV,MOD_LGUI) on hold
     return apply_mod_if_holding(KC_LGUI, record);
   case LT(_LEFT_NUMNAV,KC_COMM):
@@ -279,9 +278,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   case LT(_LEFT_NUMNAV,KC_SLSH):
     return apply_mod_if_holding(KC_LSFT, record);
 
-    // right numnav-mods layer
+  // right numnav-mods layer
   case LT(_RIGHT_NUMNAV,KC_X):
-  case LT(_RIGHT_NUMNAV,KC_W):
     // Behave as KC_DOT/KC_O on tap, LM(_RIGHT_NUMNAV,MOD_LGUI) on hold
     return apply_mod_if_holding(KC_LGUI, record);
   case LT(_RIGHT_NUMNAV,KC_C):
@@ -291,7 +289,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   case LT(_RIGHT_NUMNAV,KC_Z):
     return apply_mod_if_holding(KC_LSFT, record);
 
-    // caps word / num word
+  // caps word / num word
   case QK_CAPS_WORD_TOGGLE:
     if (record->event.pressed) {
       toggle_caps_word_mode(CAPS_WORD_MODE_DEFAULT);
@@ -305,7 +303,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     }
     break;
 
-    // layer locks
+  // layer locks
   case UKC_NUM_LOCK_TOGGLE:
     if (record->event.pressed) {
       toggle_layer_lock(_NUMNAV);
