@@ -13,7 +13,6 @@ enum custom_layers {
   _LEFT_NUMNAV, // left side of NUMNAV layer
   _RIGHT_NUMNAV, // right side of NUMNAV layer
   _LEFTNAV,
-  _FNKEY,
 
   // rest of the layers
   _SYMBOL,
@@ -157,28 +156,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       _______, _______, _______,
                       _______, _______, _______
                       ),
-
-  [_FNKEY] =
-  LAYOUT(
-         /* Number Row */
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Qwerty Row */
-         XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Home Row */
-         XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-         XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,
-         /* Zxc Row (Left) */
-         QK_BOOT, KC_F11, KC_F12, XXXXXXX, XXXXXXX, XXXXXXX,
-         /* Top Thumb Keys */
-         _______, _______,
-         /* Zxc Row (Right) */
-         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
-         /* Bottom Row */
-         _______, _______, _______,
-         _______, _______, _______
-         ),
 
   [_MULTIMEDIA] =
   LAYOUT(
@@ -469,27 +446,6 @@ void set_left_nav_layer_leds(rgb_t rgb) {
   set_right_numnav_leds(get_default_rgb_color());
 }
 
-
-void set_fnkeylayer_leds(rgb_t rgb) {
-  // F1-F10
-  for (uint8_t i = 1; i <= 2; i++) {
-    for (uint8_t j = 1; j <= 5; j++) {
-      set_rgb(i, j, rgb);
-    }
-  }
-  // F11-F12
-  set_rgb(3, 1, rgb);
-  set_rgb(3, 2, rgb);
-
-  // FIXME: workaround for mirroring bug (see earlier comment for details)
-  rgb_t rgb_default = get_default_rgb_color();
-  for (uint8_t i = 6; i <= 8; i++) {
-    for (uint8_t j = 1; j <= 5; j++) {
-      set_rgb(i, j, rgb_default);
-    }
-  }
-}
-
 // TODO fix - leds are mirrored on both halves
 void set_testing_leds(uint8_t led_min, uint8_t led_max) {
   hsv_t hsv_red = {HSV_RED};
@@ -552,9 +508,6 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     break;
   case _RIGHT_NUMNAV:
     set_right_numnav_leds(rgb);
-    break;
-  case _FNKEY:
-    set_fnkeylayer_leds(rgb);
     break;
   case _MULTIMEDIA:
     set_multimedia_layer_leds();
