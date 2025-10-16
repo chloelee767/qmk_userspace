@@ -4,19 +4,15 @@
 #include "features/achordion.h"
 #include "features/caps_word.h"
 
+// note: make lockable layers lower numbered
+// so that we can use the higher layers if needed
 enum custom_layers {
-  // base layer
-  _QWERTY,
-
-  // make lockable layers lower numbered
-  // so that we can use the higher layers if needed
+  _QWERTY, // base layer
   _LEFT_NUMNAV, // left side of NUMNAV layer
   _RIGHT_NUMNAV, // right side of NUMNAV layer
   _LEFTNAV,
-
-  // rest of the layers
-  _SYMBOL,
   _NUMNAV,
+  _SYMBOL,
   _MULTIMEDIA
 };
 
