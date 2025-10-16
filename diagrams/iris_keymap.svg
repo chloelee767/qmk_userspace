@@ -467,6 +467,12 @@ text.ghost {
 <text x="644" y="55" class="combo tap layer-activator">NUMNAV</text>
 </a></g>
 <g class="combo combopos-7">
+<rect rx="6" ry="6" x="154" y="74" width="28" height="26" class="combo"/>
+<text x="168" y="88" class="combo tap">
+<tspan x="168" dy="-0.6em">NUM</tspan><tspan x="168" dy="1.2em">WORD</tspan>
+</text>
+</g>
+<g class="combo combopos-8">
 <rect rx="6" ry="6" x="210" y="74" width="28" height="26" class="combo"/>
 <a href="#NUMNAV">
 <text x="224" y="88" class="combo tap layer-activator">NUMNAV</text>
