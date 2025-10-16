@@ -30,7 +30,7 @@ layers:
   - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
-    - {type: held1}
+    - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   NUMNAV:
@@ -44,7 +44,7 @@ layers:
     - '0'
     - {type: held}
     - {t: ▽, type: trans}
-    - {type: held1}
+    - {type: held}
     - {t: ▽, type: trans}
   LEFTNAV:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
@@ -64,7 +64,7 @@ layers:
   - [null, null, '$$mdi:volume-mute$$', '$$mdi:volume-minus$$', '$$mdi:volume-plus$$', null, null, null, null, null, null, null]
   - [null, null, '$$mdi:skip-backward$$', '$$mdi:play-pause$$', '$$mdi:skip-forward$$', null, null, null, null, null, null, null]
   - [null, null, null, '$$mdi:brightness-5$$', '$$mdi:brightness-7$$', null]
-  - [{type: held1}, {type: held2}]
+  - [{type: held}, {type: held}]
   - [null, null, null, null, null, null]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -81,12 +81,3 @@ combos:
   - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
   - {p: [19, 20, 21], k: NUM, l: ["BASE"], a: "top"} # U + I + O → Num Lock Toggle
   - {p: [2, 3, 4], k: LEFT NAV, l: ["BASE"], a: "top", o: 0.2} # 2 + 3 + 4 → Left Nav Lock Toggle
-draw_config:
-  svg_extra_style: |
-    /* color accent for extra key types */
-    rect.held1, rect.combo.held1 {
-      fill: #dde;
-    }
-    rect.held2, rect.combo.held2 {
-      fill: #e6e3e3;
-    }
