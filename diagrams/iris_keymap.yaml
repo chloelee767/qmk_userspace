@@ -21,12 +21,12 @@ layers:
     - {h: NUMNAV, t: SPC}
     - {h: MEDIA, t: BSPC}
   SYMBOL:
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '[', ']', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: '[', type: ghost}, {t: ']', type: ghost}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
   - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
   - [{t: ▽, type: trans}, {t: '@', type: ghost}, '#', _, '@', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
-  - ['0', '=', '<', '>', '?', '''']
+  - ['0', '=', '<', '>', '?', {t: '''', type: ghost}]
   - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
