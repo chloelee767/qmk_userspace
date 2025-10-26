@@ -6,10 +6,10 @@ How to build the firmware: `just build`
 
 ## Keymap diagrams
 
-We have a SVG diagram created using the `caksoylar/keymap-drawer` tool. 
+We have multiple SVG diagrams created using the `caksoylar/keymap-drawer` tool. 
 Updating the diagram:
-- Update `diagrams/iris_keymap.yaml`
-- Run `just diagrams`
+- Update the relevant yaml file in `diagrams/*.yaml`
+- Run `just diagrams` to regenerate the SVGs
 
 ### Conventions
 

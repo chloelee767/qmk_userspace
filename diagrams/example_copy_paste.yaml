@@ -1,0 +1,29 @@
+layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
+layers:
+  "":
+  # Number Row
+  - [{t: '`', type: ghost}, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=']
+  # QWERTY Row
+  - [CAPS WORD, Q, W, E, R, T, Y, U, I, O, P, CAPS WORD]
+  # Home Row
+  - [ESC, {h: Shft, t: A}, {h: Gui, t: S}, {h: Alt, t: D}, {h: Ctrl, t: F}, {h: C+A+G, t: G}, {h: C+A+G, t: H}, {h: Ctrl, t: J}, {h: Alt, t: K}, {h: Gui, t: L}, {h: Shft, t: ;}, '''']
+  # ZXCV Row (Left)
+  - [{t: 'OSM Gui', type: held}, {h: NUM+Shft, t: Z}, {h: NUM+Gui, t: X}, {h: NUM+Alt, t: C, type: tap}, {h: NUM+Ctrl, t: V}, B]
+  # Top Thumb Keys
+  - [MEDIA, MEDIA]
+  # ZXCV Row (Right)
+  - [N, {h: NAV+Ctrl, t: M}, {h: NAV+Alt, t: ','}, {h: NAV+Gui, t: .}, {h: NAV+Shft, t: /}, '-']
+  # Bottom Thumb Keys
+  - - {h: NUMNAV, t: DEL}
+    - {h: SYMBOL, t: BSPC}
+    - {h: NUMNAV, t: TAB}
+    - {h: SYMBOL, t: ENT}
+    - {h: NUMNAV, t: SPC}
+    - {h: MEDIA, t: BSPC}
+draw_config:
+  svg_extra_style: |
+    /* color accent for extra key types */
+    rect.tap, rect.combo.tap {
+      fill: #d4d4fa;
+    }
+
