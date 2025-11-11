@@ -3,7 +3,7 @@
 #define TAPPING_TERM 150
 #define PERMISSIVE_HOLD
 #define COMBO_ONLY_FROM_LAYER 0
-#define COMBO_TERM 25
+#define COMBO_TERM 50
 
 // default is no led
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
