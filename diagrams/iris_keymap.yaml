@@ -65,10 +65,10 @@ combos:
   - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
   - {p: [15, 27], k: '~', l: ["BASE"]}  # D + E → ~
-  - {p: [19, 20], k: NUM WORD, l: ["BASE"]} # U + I → Num Word Toggle
-  - {p: [19, 20, 21], k: NUMNAV, l: ["BASE"], a: "top"} # U + I + O → Num Lock Toggle
-  - {p: [14, 15], k: NUM WORD, l: ["BASE"]} # W + E → Num Word Toggle
-  - {p: [15, 16], k: NUMNAV, l: ["BASE"]} # E + R → Num Lock Toggle
+  - {p: [7, 8], k: NUM WORD, l: ["BASE"]} # 7 + 8 → Num Word Toggle
+  - {p: [7, 8, 9], k: NUMNAV, l: ["BASE"], a: "top"} # 7 + 8 + 9 → Num Lock Toggle
+  - {p: [2, 3], k: NUM WORD, l: ["BASE"]} # 2 + 3 → Num Word Toggle
+  - {p: [3, 4], k: NUMNAV, l: ["BASE"]} # 3 + 4 → Num Lock Toggle
 draw_config:
   svg_extra_style: |
     /* custom style for ghost keys */

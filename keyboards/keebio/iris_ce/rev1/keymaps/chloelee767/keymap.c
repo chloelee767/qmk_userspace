@@ -305,10 +305,10 @@ const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM combo_de[] = {LALT_T(KC_D), KC_E, COMBO_END};
-const uint16_t PROGMEM combo_ui[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_uio[] = {KC_U, KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_we[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_er[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_78[] = {KC_7, KC_8, COMBO_END};
+const uint16_t PROGMEM combo_789[] = {KC_7, KC_8, KC_9, COMBO_END};
+const uint16_t PROGMEM combo_23[] = {KC_2, KC_3, COMBO_END};
+const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
@@ -317,10 +317,10 @@ combo_t key_combos[] = {
   COMBO(combo_rf, KC_GRV),
   COMBO(combo_de, KC_TILD),
 
-  COMBO(combo_we, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_ui, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_uio, UKC_NUM_LOCK_TOGGLE),
-  COMBO(combo_er, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_23, UKC_NUM_WORD_TOGGLE),
+  COMBO(combo_78, UKC_NUM_WORD_TOGGLE),
+  COMBO(combo_789, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_34, UKC_NUM_LOCK_TOGGLE),
 };
 
 // Caps word
