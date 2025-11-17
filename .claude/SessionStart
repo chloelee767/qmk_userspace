@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# SessionStart hook for QMK userspace project
+# Only runs setup in Claude Code web environment
+
+# Don't exit on error - we want to install what we can
+set +e
+
+# Check if running in Claude Code web environment
+if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
+    echo "🌐 Claude Code web environment detected - setting up dependencies..."
+
+    # Ensure ~/.local/bin is in PATH
+    export PATH="$HOME/.local/bin:$PATH"
+
+    # Track what succeeded
+    SUCCESS=""
+    FAILED=""
+
+    # Install system build dependencies needed by QMK
+    echo "📦 Installing system build dependencies..."
+    if apt-get update >/dev/null 2>&1 && apt-get install -y git make gcc-arm-none-eabi avrdude dfu-programmer dfu-util >/dev/null 2>&1; then
+        SUCCESS="$SUCCESS build-deps"
+    else
+        FAILED="$FAILED build-deps"
+    fi
+
+    # Install keymap-drawer (for diagram generation)
+    echo "📦 Installing keymap-drawer..."
+    if pip3 install --user --break-system-packages --quiet keymap-drawer 2>&1; then
+        SUCCESS="$SUCCESS keymap-drawer"
+    else
+        FAILED="$FAILED keymap-drawer"
+    fi
+
+    # Install just command runner
+    if ! command -v just &> /dev/null; then
+        echo "📦 Installing just..."
+        if curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh 2>/dev/null | bash -s -- --to ~/.local/bin >/dev/null 2>&1; then
+            SUCCESS="$SUCCESS just"
+        else
+            FAILED="$FAILED just"
+        fi
+    else
+        SUCCESS="$SUCCESS just"
+    fi
+
+    # Install QMK CLI using uv (recommended by QMK docs)
+    echo "📦 Installing QMK CLI with uv..."
+    if uv tool install qmk >/dev/null 2>&1; then
+        SUCCESS="$SUCCESS qmk"
+
+        # Run qmk setup to install firmware and toolchain (official workflow)
+        echo "🔧 Running qmk setup (this will take 2-3 minutes)..."
+        if qmk setup -H ~/qmk_firmware -y 2>&1 | grep -E "^(Ψ|⚠|✔)" >/dev/null 2>&1; then
+            # Ensure qmk home is configured (sometimes setup doesn't persist it)
+            qmk config user.qmk_home=~/qmk_firmware >/dev/null 2>&1
+            SUCCESS="$SUCCESS qmk-firmware"
+        else
+            FAILED="$FAILED qmk-firmware"
+        fi
+    else
+        FAILED="$FAILED qmk"
+    fi
+
+    # Summary
+    echo ""
+    echo "✅ Setup complete!"
+    [ -n "$SUCCESS" ] && echo "   Installed:$SUCCESS"
+    [ -n "$FAILED" ] && echo "   Failed:$FAILED"
+    echo ""
+    echo "Available commands:"
+    [ -n "$(echo $SUCCESS | grep keymap-drawer)" ] && [ -n "$(echo $SUCCESS | grep just)" ] && echo "  • just diagrams  - Generate keymap SVG diagrams"
+    [ -n "$(echo $SUCCESS | grep qmk)" ] && [ -n "$(echo $SUCCESS | grep just)" ] && echo "  • just build     - Compile firmware"
+else
+    # Local environment - skip setup
+    :
+fi
