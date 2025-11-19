@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
     KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
     /* Home Row */
-    XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+    XXXXXXX, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
     KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
     /* Zxc Row (Left) */
     XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
     _______, _______, _______, _______, _______, _______,
     /* Home Row */
-    XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+    XXXXXXX, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
     _______, _______, _______, _______, _______, _______,
     /* Zxc Row (Left) */
     XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,
