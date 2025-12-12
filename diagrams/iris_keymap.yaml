@@ -65,10 +65,10 @@ combos:
   - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
   - {p: [15, 27], k: '~', l: ["BASE"]}  # D + E → ~
-  - {p: [7, 8], k: NUM WORD, l: ["BASE"]} # 7 + 8 → Num Word Toggle
-  - {p: [7, 8, 9], k: NUMNAV, l: ["BASE"], a: "top"} # 7 + 8 + 9 → Num Lock Toggle
   - {p: [2, 3], k: NUM WORD, l: ["BASE"]} # 2 + 3 → Num Word Toggle
+  - {p: [8, 9], k: NUM WORD, l: ["BASE"]} # 8 + 9 → Num Word Toggle
   - {p: [3, 4], k: NUMNAV, l: ["BASE"]} # 3 + 4 → Num Lock Toggle
+  - {p: [7, 8], k: NUMNAV, l: ["BASE"]} # 7 + 8 → Num Lock Toggle
   # Function row combos
   - {p: [1, 13], k: F1, l: ["BASE"]}    # 1 + Q → F1
   - {p: [2, 14], k: F2, l: ["BASE"]}    # 2 + W → F2

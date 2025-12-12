@@ -306,7 +306,7 @@ const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM combo_de[] = {LALT_T(KC_D), KC_E, COMBO_END};
 const uint16_t PROGMEM combo_78[] = {KC_7, KC_8, COMBO_END};
-const uint16_t PROGMEM combo_789[] = {KC_7, KC_8, KC_9, COMBO_END};
+const uint16_t PROGMEM combo_89[] = {KC_8, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_23[] = {KC_2, KC_3, COMBO_END};
 const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
 // function row combos
@@ -331,9 +331,9 @@ combo_t key_combos[] = {
   COMBO(combo_de, KC_TILD),
 
   COMBO(combo_23, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_78, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_789, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_89, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_34, UKC_NUM_LOCK_TOGGLE),
+  COMBO(combo_78, UKC_NUM_LOCK_TOGGLE),
 
   COMBO(combo_f1, KC_F1),
   COMBO(combo_f2, KC_F2),
