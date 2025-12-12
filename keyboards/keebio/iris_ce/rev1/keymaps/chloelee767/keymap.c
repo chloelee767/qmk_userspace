@@ -309,6 +309,19 @@ const uint16_t PROGMEM combo_78[] = {KC_7, KC_8, COMBO_END};
 const uint16_t PROGMEM combo_789[] = {KC_7, KC_8, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_23[] = {KC_2, KC_3, COMBO_END};
 const uint16_t PROGMEM combo_34[] = {KC_3, KC_4, COMBO_END};
+// function row combos
+const uint16_t PROGMEM combo_f1[] = {KC_1, KC_Q, COMBO_END};
+const uint16_t PROGMEM combo_f2[] = {KC_2, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_f3[] = {KC_3, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_f4[] = {KC_4, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_f5[] = {KC_5, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_f6[] = {KC_6, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo_f7[] = {KC_7, KC_U, COMBO_END};
+const uint16_t PROGMEM combo_f8[] = {KC_8, KC_I, COMBO_END};
+const uint16_t PROGMEM combo_f9[] = {KC_9, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_f10[] = {KC_0, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_f11[] = {KC_EQL, QK_CAPS_WORD_TOGGLE, COMBO_END};
+const uint16_t PROGMEM combo_f12[] = {QK_CAPS_WORD_TOGGLE, KC_QUOT, COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
@@ -321,6 +334,19 @@ combo_t key_combos[] = {
   COMBO(combo_78, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_789, UKC_NUM_LOCK_TOGGLE),
   COMBO(combo_34, UKC_NUM_LOCK_TOGGLE),
+
+  COMBO(combo_f1, KC_F1),
+  COMBO(combo_f2, KC_F2),
+  COMBO(combo_f3, KC_F3),
+  COMBO(combo_f4, KC_F4),
+  COMBO(combo_f5, KC_F5),
+  COMBO(combo_f6, KC_F6),
+  COMBO(combo_f7, KC_F7),
+  COMBO(combo_f8, KC_F8),
+  COMBO(combo_f9, KC_F9),
+  COMBO(combo_f10, KC_F10),
+  COMBO(combo_f11, KC_F11),
+  COMBO(combo_f12, KC_F12),
 };
 
 // Caps word
