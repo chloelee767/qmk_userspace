@@ -56,3 +56,6 @@ How to reflash the keyboard:
 Updating the diagram:
 - Update the relevant yaml file in `diagrams/*.yaml`
 - Run `just diagrams` to regenerate the SVGs
+
+Updating key order/matrix diagrams in CLAUDE.md:
+- The diagrams are generated using `scripts/visualize_matrix.py`

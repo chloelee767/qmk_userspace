@@ -44,15 +44,24 @@ def draw_with_matplotlib(layout):
 
     plt.show()
 
-def draw_ascii(layout):
+def draw_ascii(layout, label_type):
     # Find the bounds of the layout
     max_x = max(key["x"] + 1 for key in layout)
     max_y = max(key["y"] + key.get("h", 1) for key in layout)
 
+    label_type_configs = {
+      "matrix": {"chars_per_unit_x": 4, "chars_per_unit_y": 2},
+      "index": {"chars_per_unit_x": 4, "chars_per_unit_y": 2},
+      "both": {"chars_per_unit_x": 8, "chars_per_unit_y": 3},
+    }
+
+    if label_type not in label_type_configs:
+        raise ValueError(f"Unknown label type {label_type}. Use {list(label_type_configs.keys())}.")
+
     # Create a grid with enough resolution
     # Each key unit is represented by a certain number of characters
-    chars_per_unit_x = 8
-    chars_per_unit_y = 3
+    chars_per_unit_x = label_type_configs[label_type]["chars_per_unit_x"]
+    chars_per_unit_y = label_type_configs[label_type]["chars_per_unit_y"]
 
     grid_width = int(max_x * chars_per_unit_x) + 1
     grid_height = int(max_y * chars_per_unit_y) + 1
@@ -101,8 +110,13 @@ def draw_ascii(layout):
         height = key.get("h", 1)
         width = 1
 
-        matrix_str = f"[{key['matrix'][0]},{key['matrix'][1]}]"
-        label = f"{matrix_str}\n{idx}"
+        matrix_str = f"{key['matrix'][0]},{key['matrix'][1]}"
+        if label_type == "matrix":
+          label = f"{matrix_str}\n"
+        elif label_type == "index":
+          label = f"{idx}\n"
+        else:
+          label = f"({matrix_str})\n{idx}"
 
         draw_box(grid, x, y, width, height, label)
 
@@ -111,14 +125,19 @@ def draw_ascii(layout):
         print(''.join(row))
 
 if __name__ == "__main__":
+    USAGE_STRING = "Usage: visualize_matrix.py [matplotlib|ascii|ascii-matrix|ascii-index]"
     if len(sys.argv) <= 1:
-        print("Usage: visualize_matrix.py [matplotlib|ascii]")
+        print(USAGE_STRING)
         sys.exit(1)
     mode = sys.argv[1]
     if mode == "matplotlib":
         draw_with_matplotlib(layout)
     elif mode == "ascii":
-        draw_ascii(layout)
+        draw_ascii(layout, "both")
+    elif mode == "ascii-matrix":
+        draw_ascii(layout, "matrix")
+    elif mode == "ascii-index":
+        draw_ascii(layout, "index")
     else:
-        print(f"Unknown mode {mode}. Use 'matplotlib' or 'ascii'.")
+        print(f"Unknown mode {mode}. {USAGE_STRING}")
         sys.exit(1)
