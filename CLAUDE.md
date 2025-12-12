@@ -1,3 +1,5 @@
+# CLAUDE.md for qmk_userspace
+
 This is a QMK userspace project for a split keyboard.
 
 ## General concepts
