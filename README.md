@@ -28,12 +28,6 @@ Since the Cmd is a OSM (One Shot Modifier), it's not necesary to hold it down, y
 
 Todo: add some way to switch between OSM Gui and OSM Ctrl to facilitate switching betweeen Mac and Windows.
 
-**1-handed F1 to F12**
-
-![](./diagrams/example_fn_keys_left.svg)
-
-![](./diagrams/example_fn_keys_right.svg)
-
 **1-handed arrow keys**
 
 ![](./diagrams/example_one_handed_arrows.svg)
