@@ -34,7 +34,6 @@ Notes:
     - Navigation keys: arrows, home/end, page up/down
     - Dedicated modifier keys: useful when you want to press a modifier alone, not in combination with some other key (eg. double tap shift for JetBrains IDEs). They are also in the same columns as the HRMs on the base layer to make it easy to remember.
     - Numpad on right hand side
-    - F1-F12: previously, I didn't have the F key combos so I accessed the F keys through this layer. I might remove this since the combos are much more convenient.
 - Symbol layer
     - This layer is technically optional as all keys are already covered by the base + numnav layer.
     - This layer mainly exists to put symbols and punctuation commonly used in programing in more comfortable positions.

@@ -8,8 +8,8 @@
 // so that we can use the higher layers if needed
 enum custom_layers {
   _QWERTY, // base layer
-  _LEFT_NUMNAV, // left side of NUMNAV layer
-  _RIGHT_NUMNAV, // right side of NUMNAV layer
+  _LEFT_NUMNAV, // left side of NUMNAV layer. remember to also update this when updating NUMNAV.
+  _RIGHT_NUMNAV, // right side of NUMNAV layer. remember to also update this when updating NUMNAV.
   _NUMNAV,
   _SYMBOL,
   _MULTIMEDIA
@@ -69,11 +69,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMNAV] =
   LAYOUT(
     /* Number Row */
-    _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-    KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+    _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,
     /* Qwerty Row */
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
-    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
+    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, XXXXXXX,
     /* Home Row */
     XXXXXXX, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
     KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LEFT_NUMNAV] = LAYOUT(
     /* Number Row */
-    _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
+    _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
     /* Qwerty Row */
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
@@ -112,10 +112,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RIGHT_NUMNAV] = LAYOUT(
     /* Number Row */
     _______, _______, _______, _______, _______, _______,
-    KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+    _______, _______, _______, _______, _______, _______,
     /* Qwerty Row */
     _______, _______, _______, _______, _______, _______,
-    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, KC_F12,
+    KC_EQL, KC_1, KC_2, KC_3, XXXXXXX, XXXXXXX,
     /* Home Row */
     _______, _______, _______, _______, _______, _______,
     KC_MINS, KC_4, KC_5, KC_6, KC_DOT, KC_COMM,
