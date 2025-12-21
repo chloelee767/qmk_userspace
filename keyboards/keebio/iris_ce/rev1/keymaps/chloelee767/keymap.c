@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,
     _______, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, _______, _______, _______,
     /* Qwerty Row */
-    _______, XXXXXXX, KC_PPLS, KC_EQL, KC_GRV, XXXXXXX, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
+    _______, XXXXXXX, KC_PPLS, KC_EQL, KC_HASH, KC_GRV, /* Don't use KC_PEQL (numpad equal) for compatiblity with windows */
     KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, XXXXXXX,
     /* Home Row */
     _______, KC_EXLM, KC_PERC, KC_MINS, KC_COLN, KC_TILD,
@@ -303,8 +303,11 @@ void matrix_scan_user(void) {
 const uint16_t PROGMEM combo_uj[] = {KC_U, LCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combo_ik[] = {KC_I, LALT_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combo_ol[] = {KC_O, LGUI_T(KC_L), COMBO_END};
+const uint16_t PROGMEM combo_p_scln[] = {KC_P, LSFT_T(KC_SCLN), COMBO_END};
 const uint16_t PROGMEM combo_rf[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM combo_de[] = {LALT_T(KC_D), KC_E, COMBO_END};
+const uint16_t PROGMEM combo_fv[] = {LCTL_T(KC_F), LT(_RIGHT_NUMNAV,KC_V), COMBO_END};
+const uint16_t PROGMEM combo_dc[] = {LALT_T(KC_D), LT(_RIGHT_NUMNAV,KC_C), COMBO_END};
 const uint16_t PROGMEM combo_78[] = {KC_7, KC_8, COMBO_END};
 const uint16_t PROGMEM combo_89[] = {KC_8, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_23[] = {KC_2, KC_3, COMBO_END};
@@ -326,9 +329,12 @@ const uint16_t PROGMEM combo_f12[] = {QK_CAPS_WORD_TOGGLE, KC_QUOT, COMBO_END};
 combo_t key_combos[] = {
   COMBO(combo_uj, KC_LEFT_BRACKET),
   COMBO(combo_ik, KC_RIGHT_BRACKET),
-  COMBO(combo_ol, KC_BSLS),
+  COMBO(combo_ol, KC_PIPE),
+  COMBO(combo_p_scln, KC_BSLS),
   COMBO(combo_rf, KC_GRV),
   COMBO(combo_de, KC_TILD),
+  COMBO(combo_fv, KC_HASH),
+  COMBO(combo_dc, KC_MINS),
 
   COMBO(combo_23, UKC_NUM_WORD_TOGGLE),
   COMBO(combo_89, UKC_NUM_WORD_TOGGLE),

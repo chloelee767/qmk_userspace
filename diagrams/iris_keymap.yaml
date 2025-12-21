@@ -22,9 +22,9 @@ layers:
     - {h: MEDIA, t: BSPC}
   SYMBOL:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: '[', type: ghost}, {t: ']', type: ghost}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-  - [{t: ▽, type: trans}, null, +, '=', '`', null, '^', '&', '*', '|', \, null]
+  - [{t: ▽, type: trans}, null, +, '=', '#', '`', '^', '&', '*', '|', \, null]
   - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
-  - [{t: ▽, type: trans}, {t: '@', type: ghost}, '#', _, '@', null]
+  - [{t: ▽, type: trans}, {t: '@', type: ghost}, {t: '#', type: ghost}, _, '@', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - ['0', '=', '<', '>', '?', {t: '''', type: ghost}]
   - - {t: ▽, type: trans}
@@ -62,9 +62,12 @@ layers:
 combos:
   - {p: [19, 31], k: '[', l: ["BASE"]}  # U + J → [
   - {p: [20, 32], k: ']', l: ["BASE"]}  # I + K → ]
-  - {p: [21, 33], k: \, l: ["BASE"]}    # O + L → \
+  - {p: [21, 33], k: '|', l: ["BASE"]}  # O + L → |
+  - {p: [22, 34], k: \, l: ["BASE"]}    # P + ; → \
   - {p: [16, 28], k: '`', l: ["BASE"]}  # R + F → `
   - {p: [15, 27], k: '~', l: ["BASE"]}  # D + E → ~
+  - {p: [28, 40], k: '#', l: ["BASE"]}  # F + V → #
+  - {p: [27, 39], k: '-', l: ["BASE"]}  # D + C → -
   - {p: [2, 3], k: NUM WORD, l: ["BASE"]} # 2 + 3 → Num Word Toggle
   - {p: [8, 9], k: NUM WORD, l: ["BASE"]} # 8 + 9 → Num Word Toggle
   - {p: [3, 4], k: NUMNAV, l: ["BASE"]} # 3 + 4 → Num Lock Toggle
