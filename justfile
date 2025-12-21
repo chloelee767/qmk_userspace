@@ -2,7 +2,6 @@ diagrams:
     keymap draw diagrams/iris_keymap.yaml > diagrams/iris_keymap.svg
     keymap draw diagrams/example_word_navigation.yaml > diagrams/example_word_navigation.svg
     keymap draw diagrams/example_word_navigation_multi.yaml > diagrams/example_word_navigation_multi.svg
-    keymap draw diagrams/example_copy_paste.yaml > diagrams/example_copy_paste.svg
     keymap draw diagrams/example_one_handed_arrows.yaml > diagrams/example_one_handed_arrows.svg
 
 build:
