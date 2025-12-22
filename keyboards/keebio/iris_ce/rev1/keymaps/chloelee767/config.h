@@ -6,6 +6,7 @@
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_TERM 30
 #define COMBO_STRICT_TIMER
+#define FLOW_TAP_TERM 50
 
 // default is no led
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR

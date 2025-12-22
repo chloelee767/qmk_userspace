@@ -279,6 +279,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   return true;
 }
 
+bool is_flow_tap_key(uint16_t keycode) {
+  if ((get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) != 0) {
+    return false; // Disable Flow Tap on hotkeys.
+  }
+  // only enable flow tap for GUI
+  switch (keycode) {
+  case LGUI_T(KC_S):
+  case RGUI_T(KC_L):
+    return true;
+  default:
+    return false;
+  }
+}
 
 // Combos
 
