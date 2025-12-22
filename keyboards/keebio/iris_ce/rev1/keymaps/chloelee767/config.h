@@ -4,7 +4,7 @@
 #define PERMISSIVE_HOLD
 #define CHORDAL_HOLD
 #define COMBO_ONLY_FROM_LAYER 0
-#define COMBO_TERM 50
+#define COMBO_TERM 30
 #define COMBO_STRICT_TIMER
 
 // default is no led
