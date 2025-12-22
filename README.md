@@ -83,11 +83,10 @@ To reconsider this -- it's not that comfortable and sometimes doesn't register.
 
 - Caps word
 - Num word: caps word, but for the numpad.
-- Achordion to reduce HRM misfires
+- Chordal hold to reduce HRM misfires
 - RGB to show useful stuff
-  - Keypad / numpad shaped RGB for NUMNAV layer
+  - RGB to show layers
   - Red RGB when caps word / num word is enabled
-  - RGB on volume up/down for MEDIA layer
 
 ### Redundant keys
 

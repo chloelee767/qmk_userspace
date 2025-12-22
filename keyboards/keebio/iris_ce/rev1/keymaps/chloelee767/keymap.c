@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
-#include "features/achordion.h"
 #include "features/caps_word.h"
 
 // note: make lockable layers lower numbered
@@ -154,10 +153,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-bool achordion_chord(uint16_t tap_hold_keycode,
-                     keyrecord_t* tap_hold_record,
-                     uint16_t other_keycode,
-                     keyrecord_t* other_record) {
+bool get_chordal_hold(uint16_t tap_hold_keycode,
+                      keyrecord_t* tap_hold_record,
+                      uint16_t other_keycode,
+                      keyrecord_t* other_record) {
 
   // Allow same-hand holds for thumb key holds.
   if (tap_hold_record->event.key.row == 4 || tap_hold_record->event.key.row == 9) {
@@ -172,15 +171,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // TODO Allow same hand for zxc row combos
 
   // Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  // Return 0 for certain keys if we want to bypass achordion.
-
-  // Return same as tapping term instead of the default 1000ms to
-  // allow us to use single hand tap-holds with the mouse.
-  return TAPPING_TERM;
+  return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
 bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
@@ -239,10 +230,6 @@ void turn_off_all_layer_locks(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
-
-  // Custom code goes after achordion
-
   switch (keycode) {
   // left numnav-mods layer
   case LT(_LEFT_NUMNAV,KC_DOT):
@@ -292,9 +279,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   return true;
 }
 
-void matrix_scan_user(void) {
-  achordion_task();
-}
 
 // Combos
 
