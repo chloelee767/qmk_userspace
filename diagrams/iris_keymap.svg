@@ -426,11 +426,11 @@ text.ghost {
 <a href="#NUMNAV">
 <text x="0" y="24" class="key hold layer-activator">NUMNAV</text>
 </a></g>
-<g transform="translate(616, 266)" class="key keypos-55">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">BSPC</text>
+<g transform="translate(616, 266)" class="key ghost keypos-55">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key ghost"/>
+<text x="0" y="0" class="key ghost tap">BSPC</text>
 <a href="#MEDIA">
-<text x="0" y="24" class="key hold layer-activator">MEDIA</text>
+<text x="0" y="24" class="key ghost hold layer-activator">MEDIA</text>
 </a></g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="574" y="106" width="28" height="26" class="combo"/>
@@ -606,9 +606,9 @@ text.ghost {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">#</text>
 </g>
-<g transform="translate(308, 98)" class="key keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">`</text>
+<g transform="translate(308, 98)" class="key ghost keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key ghost"/>
+<text x="0" y="0" class="key ghost tap">`</text>
 </g>
 <g transform="translate(532, 98)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

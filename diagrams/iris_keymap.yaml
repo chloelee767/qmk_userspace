@@ -19,10 +19,10 @@ layers:
     - {h: NUMNAV, t: TAB}
     - {h: SYMBOL, t: ENT}
     - {h: NUMNAV, t: SPC}
-    - {h: MEDIA, t: BSPC}
+    - {h: MEDIA, t: BSPC, type: ghost}
   SYMBOL:
   - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: '[', type: ghost}, {t: ']', type: ghost}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-  - [{t: ▽, type: trans}, null, +, '=', '#', '`', '^', '&', '*', '|', \, null]
+  - [{t: ▽, type: trans}, null, +, '=', '#', {t: '`', type: ghost}, '^', '&', '*', '|', \, null]
   - [{t: ▽, type: trans}, '!', '%', '-', ':', '~', '$', '(', ')', '{', '}', '"']
   - [{t: ▽, type: trans}, {t: '@', type: ghost}, {t: '#', type: ghost}, _, '@', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]

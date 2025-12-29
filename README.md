@@ -3,7 +3,7 @@
 A ~56 key QWERTY-based split keyboard layout for the Keebio Iris CE.
 
 Aims:
-1. Improve ergonomics for programming, with a focus on vim keybindings
+1. Improve ergonomics for programming, including with vim keybindings
 2. Cover all reasonable keys on a typical 75% US ANSI keyboard (ie. typical 14-inch laptop keyboard), while having a minimal number of layers and cognitive load
     - Current missing keys compared to 75% ANSI: caps lock (replaced with caps word), right hand modifiers (right shift/alt/control/GUI).
 3. Make it easy to press **any** keyboard shortcut that can be pressed on a regular keyboard
@@ -73,6 +73,8 @@ To reconsider this -- it's not that comfortable and sometimes doesn't register.
 ### Programming
 
 - Symbol layer
+  - This `^ & *` cluster on the top left corner of the right half matches the symbols on the `6 7 8` keys above
+  - Most of the symbol keys in the bottom right corner the right half (`< > ? "`) give the same symbol as pressing "Shift". The only exception is `:`, because of the curly bracket.
 - Shell specific:
     - Comfortable combo for `~`
 - Vim specific:
@@ -93,16 +95,17 @@ To reconsider this -- it's not that comfortable and sometimes doesn't register.
 I do want to minimise the number of duplicated keys to make the layout easier to remember, but for now there's still more than I'd like as the layout is evolving.
 
 There are also some deliberate redundancies, which are listed here for reference:
-- `=` and `-` duplicated on base layer, numnav layer and in symbol layer: I don't actually use the ones on the base layer for typing, they only exist for keyboard shortcuts because I have trouble remembering where they are located on the numnav layer.
+- `=` and `-` duplicated on base layer, numnav layer and in symbol layer: I don't actually use the ones on the base layer for typing, they only exist for keyboard shortcuts (zoom in/out, reset zoom) because I have trouble remembering where they are located on the numnav layer.
 - 2 `=` on symbol layer: right hand one is to make `>=` and `<=` more comfortable to press, left hand one is to make `:=` more comfortable to press.
 - `0` on both symbol layer and numnav layer: the symbol layer one is for vim usage.
 - 2 shift keys on numnav layer: the upper shift is easier to press alone, but the lower shift is easier to press together with other modifiers.
 
 ### Other issues / ideas
 
-- Even with achordion, HRMs still have quite a lot of accidental misfires. Enabling typing streak doesn't seem to work too well, as I press some keyboard shortcuts very often while typing (eg. ctrl+a/e/w, alt+b/f/d -- emacs style editing shortcuts)
+- Even with chordal hold, HRMs still have quite a lot of accidental misfires. Enabling typing streak doesn't seem to work too well, as I press some keyboard shortcuts very often while typing (eg. ctrl+a/e/w, alt+b/f/d -- emacs style editing shortcuts)
 - Horizontal combos (num word and num nav) are very prone to accidental triggers.
 - Convert numnav layer numbers into numpad numbers instead?
+- Rearrange numpad symbols in the numnav layer, they're hard to remember and rarely used.
 - The JetBrains multiple cursors shortcut (alt, alt, alt + arrow up/down) is a bit awkward to press, it requires using the numnav layer's alt key, including for holding down alt+arrow.
 
 ## Development
@@ -112,6 +115,11 @@ First time setup:
 - Run setup for QMK userspace (see QMK docs)
 - Install just
 - Install https://github.com/caksoylar/keymap-drawer
+- Claude code setups:
+``` sh
+claude mcp add --transport http context7 https://mcp.context7.com/mcp
+```
+
 
 Building the firmware:
 - Build the firmware: `just build`
