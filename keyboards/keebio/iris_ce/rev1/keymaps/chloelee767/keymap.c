@@ -323,34 +323,75 @@ const uint16_t PROGMEM combo_f10[] = {KC_0, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_f11[] = {KC_EQL, QK_CAPS_WORD_TOGGLE, COMBO_END};
 const uint16_t PROGMEM combo_f12[] = {QK_CAPS_WORD_TOGGLE, KC_QUOT, COMBO_END};
 
-combo_t key_combos[] = {
-  COMBO(combo_uj, KC_LEFT_BRACKET),
-  COMBO(combo_ik, KC_RIGHT_BRACKET),
-  COMBO(combo_ol, KC_PIPE),
-  COMBO(combo_p_scln, KC_BSLS),
-  COMBO(combo_rf, KC_GRV),
-  COMBO(combo_de, KC_TILD),
-  COMBO(combo_fv, KC_HASH),
-  COMBO(combo_dc, KC_MINS),
-
-  COMBO(combo_23, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_89, UKC_NUM_WORD_TOGGLE),
-  COMBO(combo_34, UKC_NUM_LOCK_TOGGLE),
-  COMBO(combo_78, UKC_NUM_LOCK_TOGGLE),
-
-  COMBO(combo_f1, KC_F1),
-  COMBO(combo_f2, KC_F2),
-  COMBO(combo_f3, KC_F3),
-  COMBO(combo_f4, KC_F4),
-  COMBO(combo_f5, KC_F5),
-  COMBO(combo_f6, KC_F6),
-  COMBO(combo_f7, KC_F7),
-  COMBO(combo_f8, KC_F8),
-  COMBO(combo_f9, KC_F9),
-  COMBO(combo_f10, KC_F10),
-  COMBO(combo_f11, KC_F11),
-  COMBO(combo_f12, KC_F12),
+enum combo_indices {
+  COMBO_UJ,
+  COMBO_IK,
+  COMBO_OL,
+  COMBO_P_SCLN,
+  COMBO_RF,
+  COMBO_DE,
+  COMBO_FV,
+  COMBO_DC,
+  COMBO_23,
+  COMBO_89,
+  COMBO_34,
+  COMBO_78,
+  COMBO_F1,
+  COMBO_F2,
+  COMBO_F3,
+  COMBO_F4,
+  COMBO_F5,
+  COMBO_F6,
+  COMBO_F7,
+  COMBO_F8,
+  COMBO_F9,
+  COMBO_F10,
+  COMBO_F11,
+  COMBO_F12,
 };
+
+combo_t key_combos[] = {
+  [COMBO_UJ] = COMBO(combo_uj, KC_LEFT_BRACKET),
+  [COMBO_IK] = COMBO(combo_ik, KC_RIGHT_BRACKET),
+  [COMBO_OL] = COMBO(combo_ol, KC_PIPE),
+  [COMBO_P_SCLN] = COMBO(combo_p_scln, KC_BSLS),
+  [COMBO_RF] = COMBO(combo_rf, KC_GRV),
+  [COMBO_DE] = COMBO(combo_de, KC_TILD),
+  [COMBO_FV] = COMBO(combo_fv, KC_HASH),
+  [COMBO_DC] = COMBO(combo_dc, KC_MINS),
+
+  [COMBO_23] = COMBO(combo_23, UKC_NUM_WORD_TOGGLE),
+  [COMBO_89] = COMBO(combo_89, UKC_NUM_WORD_TOGGLE),
+  [COMBO_34] = COMBO(combo_34, UKC_NUM_LOCK_TOGGLE),
+  [COMBO_78] = COMBO(combo_78, UKC_NUM_LOCK_TOGGLE),
+
+  [COMBO_F1] = COMBO(combo_f1, KC_F1),
+  [COMBO_F2] = COMBO(combo_f2, KC_F2),
+  [COMBO_F3] = COMBO(combo_f3, KC_F3),
+  [COMBO_F4] = COMBO(combo_f4, KC_F4),
+  [COMBO_F5] = COMBO(combo_f5, KC_F5),
+  [COMBO_F6] = COMBO(combo_f6, KC_F6),
+  [COMBO_F7] = COMBO(combo_f7, KC_F7),
+  [COMBO_F8] = COMBO(combo_f8, KC_F8),
+  [COMBO_F9] = COMBO(combo_f9, KC_F9),
+  [COMBO_F10] = COMBO(combo_f10, KC_F10),
+  [COMBO_F11] = COMBO(combo_f11, KC_F11),
+  [COMBO_F12] = COMBO(combo_f12, KC_F12),
+};
+
+bool get_combo_must_hold(uint16_t combo_index, combo_t *combo) {
+  // Horizontal combos (side-by-side keys) must be held, in order to reduce
+  // accidental triggers during fast typing
+  switch (combo_index) {
+  case COMBO_23:
+  case COMBO_89:
+  case COMBO_34:
+  case COMBO_78:
+    return true;
+  }
+  // All other combos fire immediately
+  return false;
+}
 
 // Caps word
 

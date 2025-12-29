@@ -6,6 +6,8 @@
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_TERM 30
 #define COMBO_STRICT_TIMER
+#define COMBO_MUST_HOLD_PER_COMBO
+#define COMBO_HOLD_TERM 30
 #define FLOW_TAP_TERM 50
 
 // default is no led

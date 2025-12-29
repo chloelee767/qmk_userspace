@@ -103,7 +103,6 @@ There are also some deliberate redundancies, which are listed here for reference
 ### Other issues / ideas
 
 - Even with chordal hold, HRMs still have quite a lot of accidental misfires. Enabling typing streak doesn't seem to work too well, as I press some keyboard shortcuts very often while typing (eg. ctrl+a/e/w, alt+b/f/d -- emacs style editing shortcuts)
-- Horizontal combos (num word and num nav) are very prone to accidental triggers.
 - Convert numnav layer numbers into numpad numbers instead?
 - Rearrange numpad symbols in the numnav layer, they're hard to remember and rarely used.
 - The JetBrains multiple cursors shortcut (alt, alt, alt + arrow up/down) is a bit awkward to press, it requires using the numnav layer's alt key, including for holding down alt+arrow.
