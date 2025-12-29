@@ -44,11 +44,13 @@ Notes:
 
 ### Making all shortcuts easy to press
 
-Shortcuts are my biggest gripes with the existing split keyboard layouts I've seen so far.
-On other layouts, common keyboard shortcuts like select text (shift + arrow keys), select word (shift + opt / ctrl + arrow keys), ctrl + page up/down, etc either: (a) require an additional key to be pressed for the layer toggle, or (b) have dedicated "select text", "select word", etc keys. I'm not fond of (b), because it scales poorly -- what if I want to press opt + arrow key instead? What about ctrl + opt + arrow key? And so on...
+Shortcuts are probably my biggest gripe with the existing split keyboard layouts I've seen so far.
+On other layouts, common keyboard shortcuts like select text (shift + arrow keys), select word (shift + opt / ctrl + arrow keys), ctrl + page up/down, etc either: (a) require an additional key to be pressed for the layer toggle, or (b) have dedicated "select text", "select word", etc keys.
+I'm not fond of (a), because it is an additional key press, and also requires timing of all the different key presses -- it doesn't work if I press shift, layer toggle and arrow key all at the same time, for example. I have to make sure to press modifier -> layer toggle -> arrow key in order.
+I'm not fond of (b) either, because it scales poorly -- what if I want to press opt + arrow key instead? What about ctrl + opt + arrow key? And so on...
 
 For this layout, since all 75% ANSI keyboard keys are included in the BASE + NUMNAV layers and combos, it means we can do this for shortcuts:
-- For shortcuts involving keys found on the base layer or combos, we can use the home row mods to press them
+- For shortcuts involving keys found on the base layer or combos, we can use the home row mods to press them. (Eg. mod+a, mod+[)
 - For shortcuts involving keys only found on the NUMNAV layer (eg. mod + arrow key), we can use the "home row mods" in the lower row. These keys in the lower row will both press the modifier and switch to the num nav layer. This means that we only need to press 2 keys to press mod + arrow key, just like a regular ANSI keyboard, with the added benefit of the arrow keys being in a much more comfortable position. To illustrate with some diagrams:
 
 Example on how to press Shift + Left (select text to the left):
