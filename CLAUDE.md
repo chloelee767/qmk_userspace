@@ -78,12 +78,19 @@ The matrix positions are used in some QMK code, eg. per-key LEDs
 
 How to build the firmware: `just build`
 
+Reminders:
+- When updating the `NUMNAV` layer, remember to also update the `LEFT_NUMNAV` and `RIGHT_NUMNAV` layers too
+
 ## Keymap diagrams
 
 We have multiple SVG diagrams created using the `caksoylar/keymap-drawer` tool.
+
 Updating the diagram:
 - Update the relevant yaml file in `diagrams/*.yaml`
 - Run `just diagrams` to regenerate the SVGs
+
+Reminders:
+- There may be multiple diagrams that show the same layer, please check carefully to ensure all the required diagram yaml files are updated
 
 ### Conventions
 

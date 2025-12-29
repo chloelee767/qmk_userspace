@@ -34,7 +34,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   NUMNAV:
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [PSCR, INS, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, null, PGUP, '$$mdi:arrow-up$$', PGDN, HOME, '=', '1', '2', '3', null, null]
   - [null, 'Shft', '$$mdi:arrow-left$$', '$$mdi:arrow-down$$', '$$mdi:arrow-right$$', END, '-', '4', '5', '6', '.', ',']
   - [null, 'Shft', 'Gui', 'Alt', 'Ctrl', null]

@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
 layers:
   "":
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [PSCR, INS, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, null, PGUP, {t: '$$mdi:arrow-up$$', type: tap}, PGDN, HOME, '=', '1', '2', '3', null, {t: ▽, type: trans}]
   - [null, 'Shft', {t: '$$mdi:arrow-left$$', type: tap}, {t: '$$mdi:arrow-down$$', type: tap}, {t: '$$mdi:arrow-right$$', type: tap}, END, '-', '4', '5', '6', '.', ',']
   - [null, 'Shft', 'Gui', 'Alt', 'Ctrl', null]

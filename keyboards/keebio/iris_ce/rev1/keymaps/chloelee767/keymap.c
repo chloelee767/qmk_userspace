@@ -7,8 +7,8 @@
 // so that we can use the higher layers if needed
 enum custom_layers {
   _QWERTY, // base layer
-  _LEFT_NUMNAV, // left side of NUMNAV layer. remember to also update this when updating NUMNAV.
-  _RIGHT_NUMNAV, // right side of NUMNAV layer. remember to also update this when updating NUMNAV.
+  _LEFT_NUMNAV, // left side of NUMNAV layer. remember to also update this layer when updating NUMNAV.
+  _RIGHT_NUMNAV, // right side of NUMNAV layer. remember to also update this layer when updating NUMNAV.
   _NUMNAV,
   _SYMBOL,
   _MULTIMEDIA
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMNAV] =
   LAYOUT(
     /* Number Row */
-    _______, _______, _______, _______, _______, _______,
+    KC_PSCR, KC_INS, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
     /* Qwerty Row */
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LEFT_NUMNAV] = LAYOUT(
     /* Number Row */
-    _______, _______, _______, _______, _______, _______,
+    KC_PSCR, KC_INS, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
     /* Qwerty Row */
     XXXXXXX, XXXXXXX, KC_PGUP, KC_UP, KC_PGDN, KC_HOME,

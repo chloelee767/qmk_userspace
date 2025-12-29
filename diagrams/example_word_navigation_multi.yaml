@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: keebio/iris_ce/rev1, layout_name: LAYOUT}
 layers:
   "":
-  - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
+  - [PSCR, INS, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, null, PGUP, '$$mdi:arrow-up$$', PGDN, HOME, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, 'Shft', {t: '$$mdi:arrow-left$$', type: tap}, '$$mdi:arrow-down$$', '$$mdi:arrow-right$$', END, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
   - [null, 'Shft', 'Gui', 'Alt', 'Ctrl', null]
