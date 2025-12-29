@@ -3,14 +3,15 @@
 #define TAPPING_TERM 150
 #define PERMISSIVE_HOLD
 #define CHORDAL_HOLD
-#define COMBO_ONLY_FROM_LAYER 0
+#define FLOW_TAP_TERM 50
+
+#define COMBO_ONLY_FROM_LAYER 0 // the combos' keys are always checked from layer 0, even if other layers are active.
 #define COMBO_TERM 30
 #define COMBO_STRICT_TIMER
 #define COMBO_MUST_HOLD_PER_COMBO
 #define COMBO_HOLD_TERM 30
-#define FLOW_TAP_TERM 50
 
-// default is no led
+// setting default to 0,0,0 meaning no LED
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
 #define RGB_MATRIX_DEFAULT_HUE 0
 #define RGB_MATRIX_DEFAULT_SAT 0
