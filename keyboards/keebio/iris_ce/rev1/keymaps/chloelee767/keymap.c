@@ -525,6 +525,24 @@ void set_caps_word_leds(void) {
   set_rgb(6, 0, rgb);
 }
 
+void set_symbol_layer_leds(void) {
+  hsv_t hsv = {HSV_YELLOW};
+  rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
+
+  // Left home row: A, S, D, F
+  set_rgb(2, 1, rgb);
+  set_rgb(2, 2, rgb);
+  set_rgb(2, 3, rgb);
+  set_rgb(2, 4, rgb);
+
+  // Right home row: J, K, L, ;
+  // Note: No workaround needed for mirroring bug since we want both sides
+  set_rgb(7, 4, rgb);
+  set_rgb(7, 3, rgb);
+  set_rgb(7, 2, rgb);
+  set_rgb(7, 1, rgb);
+}
+
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
   hsv_t hsv = {HSV_BLUE};
   rgb_t rgb = hsv_to_rgb(hsv_limit_brightness(hsv));
@@ -538,6 +556,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     break;
   case _RIGHT_NUMNAV:
     set_right_numnav_leds(rgb);
+    break;
+  case _SYMBOL:
+    set_symbol_layer_leds();
     break;
   case _MULTIMEDIA:
     set_multimedia_layer_leds();

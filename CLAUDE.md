@@ -72,7 +72,9 @@ This diagram shows the physical layout of the keyboard with the matrix positions
                       └───┘      └───┘
 ```
 
-The matrix positions are used in some QMK code, eg. per-key LEDs
+The matrix positions are used in QMK code that targets specific physical keys, including:
+- RGB/LED control (e.g., `set_rgb(row, col, rgb)`)
+- Per-key configuration in `process_record_user()`
 
 ## QMK firmware
 
