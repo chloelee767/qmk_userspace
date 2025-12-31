@@ -166,6 +166,10 @@ path.combo {
 text.ghost {
   opacity: 0.5;
 }
+/* make combo backgrounds translucent */
+rect.combo {
+  opacity: 0.6;
+}
 </style>
 <g transform="translate(30, 0)" class="layer-BASE">
 <text x="0" y="28" class="label" id="BASE">BASE:</text>

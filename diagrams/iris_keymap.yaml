@@ -91,3 +91,7 @@ draw_config:
     text.ghost {
       opacity: 0.5;
     }
+    /* make combo backgrounds translucent */
+    rect.combo {
+      opacity: 0.6;
+    }
