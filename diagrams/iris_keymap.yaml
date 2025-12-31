@@ -14,7 +14,7 @@ layers:
   # ZXCV Row (Right)
   - [N, {h: NAV+Ctrl, t: M}, {h: NAV+Alt, t: ','}, {h: NAV+Gui, t: .}, {h: NAV+Shft, t: /}, '-']
   # Bottom Thumb Keys
-  - - {h: NUMNAV, t: DEL}
+  - - {h: Gui, t: DEL}
     - {h: SYMBOL, t: BSPC}
     - {h: NUMNAV, t: TAB}
     - {h: SYMBOL, t: ENT}
@@ -40,7 +40,7 @@ layers:
   - [null, 'Shft', 'Gui', 'Alt', 'Ctrl', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - [+, '7', '8', '9', '/', '*']
-  - - {type: held}
+  - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}

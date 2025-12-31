@@ -7,7 +7,7 @@ layers:
   - [null, 'Shft', 'Gui', 'Alt', 'Ctrl', null]
   - [{t: ▽, type: trans}, {t: ▽, type: trans}]
   - [+, '7', '8', '9', '/', '*']
-  - - {type: held}
+  - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
