@@ -175,8 +175,8 @@ bool get_chordal_hold(uint16_t tap_hold_keycode,
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-  // Trigger hold immediately for thumb keys.
-  if (record->event.key.row == 4 || record->event.key.row == 9) {
+  // Trigger hold immediately for thumb keys (except for space key)
+  if (record->event.key.row == 4 || (record->event.key.row == 9 && record->event.key.col != 3)) {
     return true;
   }
 
