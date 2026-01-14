@@ -168,10 +168,19 @@ bool get_chordal_hold(uint16_t tap_hold_keycode,
     return true;
   }
 
-  // TODO Allow same hand for zxc row combos
+  // TODO Allow same hand for zxc row combos?
 
   // Otherwise, follow the opposite hands rule.
   return get_chordal_hold_default(tap_hold_record, other_record);
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+  // Trigger hold immediately for thumb keys.
+  if (record->event.key.row == 4 || record->event.key.row == 9) {
+    return true;
+  }
+
+  return false;
 }
 
 bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
