@@ -1,7 +1,6 @@
 #pragma once
 
-#define TAPPING_TERM 150
-#define PERMISSIVE_HOLD
+#define TAPPING_TERM 200
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define CHORDAL_HOLD
 #define FLOW_TAP_TERM 50
