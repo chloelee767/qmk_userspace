@@ -174,14 +174,14 @@ bool get_chordal_hold(uint16_t tap_hold_keycode,
   return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
-/* bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) { */
-/*   // Trigger hold immediately for thumb keys (except for space key) */
-/*   if (record->event.key.row == 4 || (record->event.key.row == 9 && record->event.key.col != 3)) { */
-/*     return true; */
-/*   } */
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+  // Trigger hold immediately for thumb keys (except for space key)
+  if (record->event.key.row == 4 || (record->event.key.row == 9 && record->event.key.col != 3)) {
+    return true;
+  }
 
-/*   return false; */
-/* } */
+  return false;
+}
 
 bool apply_mod_if_holding(uint16_t mod_keycode, keyrecord_t* record) {
   if (!record->tap.count) { // if holding
